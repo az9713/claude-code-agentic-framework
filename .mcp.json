@@ -1,0 +1,44 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-server-filesystem",
+        "${PROJECT_ROOT}/app",
+        "${PROJECT_ROOT}/tests",
+        "${PROJECT_ROOT}/specs",
+        "${PROJECT_ROOT}/ai_docs"
+      ],
+      "description": "File system access for project directories"
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-server-github"
+      ],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "description": "GitHub integration for issues, PRs, and repository management"
+    },
+    "memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@anthropic-ai/mcp-server-memory"
+      ],
+      "description": "Persistent memory for cross-session context"
+    }
+  },
+  "notes": {
+    "setup": "Set GITHUB_TOKEN environment variable for GitHub integration",
+    "filesystem_paths": "Modify paths in filesystem server args to match your project structure",
+    "optional_servers": [
+      "postgres - for database integration",
+      "redis - for caching integration",
+      "slack - for team notifications"
+    ]
+  }
+}

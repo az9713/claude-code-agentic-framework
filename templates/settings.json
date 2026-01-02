@@ -1,0 +1,100 @@
+{
+  "project": {
+    "name": "Codebase Singularity Project",
+    "description": "A project using the Codebase Singularity agentic layer framework",
+    "version": "1.0.0",
+    "language": "javascript",
+    "framework": null
+  },
+  "agenticLayer": {
+    "class": 3,
+    "grade": 1,
+    "version": "1.0.0"
+  },
+  "preferences": {
+    "autoLint": true,
+    "protectedFiles": true,
+    "qualityGate": false,
+    "verboseLogging": false,
+    "autoSaveSpecs": true
+  },
+  "agents": {
+    "defaultModel": "sonnet",
+    "fastModel": "haiku",
+    "smartModel": "opus",
+    "enabled": [
+      "orchestrator",
+      "planner",
+      "builder",
+      "reviewer",
+      "fixer",
+      "test-writer",
+      "doc-fetcher",
+      "security-auditor",
+      "refactorer"
+    ]
+  },
+  "commands": {
+    "enabled": [
+      "prime",
+      "plan",
+      "build",
+      "review",
+      "fix",
+      "cycle",
+      "feature",
+      "bugfix",
+      "orchestrate",
+      "delegate",
+      "init"
+    ],
+    "aliases": {
+      "p": "prime",
+      "pl": "plan",
+      "b": "build",
+      "r": "review",
+      "f": "fix"
+    }
+  },
+  "hooks": {
+    "enabled": true,
+    "autoLint": true,
+    "protectFiles": true,
+    "logSubagents": true,
+    "qualityGate": false
+  },
+  "mcp": {
+    "enabled": true,
+    "servers": [
+      "filesystem",
+      "github",
+      "memory"
+    ]
+  },
+  "paths": {
+    "specs": "specs/",
+    "reviews": "specs/reviews/",
+    "fixes": "specs/fixes/",
+    "aiDocs": "ai_docs/",
+    "logs": "logs/",
+    "app": "app/",
+    "tests": "tests/"
+  },
+  "codingStandards": {
+    "style": "standard",
+    "maxLineLength": 100,
+    "maxFunctionLength": 50,
+    "requireTests": true,
+    "requireDocs": false
+  },
+  "review": {
+    "minScore": 7,
+    "autoFix": false,
+    "severityLevels": {
+      "critical": "block",
+      "high": "warn",
+      "medium": "info",
+      "low": "ignore"
+    }
+  }
+}

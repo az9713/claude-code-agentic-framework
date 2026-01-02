@@ -1,0 +1,22 @@
+{
+  "name": "codebase-singularity",
+  "version": "1.0.0",
+  "description": "Full agentic layer framework implementing the Codebase Singularity concept - enabling AI agents to operate your codebase autonomously through planning, building, reviewing, and fixing workflows. Implements Class 1-3 with orchestration capabilities.",
+  "author": {
+    "name": "Agentic Layer Framework Contributors"
+  },
+  "keywords": [
+    "agentic-layer",
+    "codebase-singularity",
+    "multi-agent",
+    "orchestration",
+    "plan-build-review-fix",
+    "claude-code",
+    "ai-development"
+  ],
+  "license": "MIT",
+  "commands": "../commands",
+  "agents": "../agents",
+  "skills": "../skills",
+  "hooks": "../hooks/hooks.json"
+}

@@ -1,0 +1,55 @@
+{
+  "hooks": [
+    {
+      "name": "auto-lint",
+      "event": "PostToolUse",
+      "tools": ["Edit", "Write"],
+      "command": "bash ${PROJECT_ROOT}/scripts/auto-lint.sh \"$FILE_PATH\"",
+      "description": "Auto-format files after editing",
+      "enabled": true,
+      "timeout": 30000
+    },
+    {
+      "name": "protect-files",
+      "event": "PreToolUse",
+      "tools": ["Edit", "Write"],
+      "command": "bash ${PROJECT_ROOT}/scripts/protect-files.sh \"$FILE_PATH\"",
+      "description": "Prevent editing protected files (.env, lock files)",
+      "enabled": true,
+      "timeout": 5000
+    },
+    {
+      "name": "log-subagent",
+      "event": "SubagentStop",
+      "command": "bash ${PROJECT_ROOT}/scripts/log-subagent.sh \"$AGENT_NAME\" \"$STATUS\"",
+      "description": "Log subagent activity for orchestration tracking",
+      "enabled": true,
+      "timeout": 5000
+    },
+    {
+      "name": "quality-gate",
+      "event": "Stop",
+      "command": "bash ${PROJECT_ROOT}/scripts/quality-gate.sh",
+      "description": "Verify quality before completing major operations",
+      "enabled": false,
+      "timeout": 60000
+    }
+  ],
+  "notes": {
+    "events": [
+      "PreToolUse - Before a tool is executed",
+      "PostToolUse - After a tool completes",
+      "Stop - When agent is about to stop",
+      "SubagentStop - When a subagent completes"
+    ],
+    "variables": [
+      "$FILE_PATH - Path of file being edited",
+      "$TOOL_NAME - Name of tool being used",
+      "$AGENT_NAME - Name of subagent",
+      "$STATUS - Success/failure status",
+      "$PROJECT_ROOT - Project root directory"
+    ],
+    "enabling": "Set enabled: true to activate a hook",
+    "timeout": "Maximum milliseconds to wait for hook to complete"
+  }
+}
