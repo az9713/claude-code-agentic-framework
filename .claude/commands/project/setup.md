@@ -190,10 +190,10 @@ When upgrading from lower class:
 
 ```bash
 # From Class 1 to Class 2
-/init --upgrade --class 2
+/setup --upgrade --class 2
 
 # From Class 2 to Class 3
-/init --upgrade --class 3
+/setup --upgrade --class 3
 ```
 
 Upgrade adds:

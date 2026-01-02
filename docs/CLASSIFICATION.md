@@ -408,14 +408,14 @@ Class 2 builds on Class 1 to create complete development workflows.
 
 | Component | Purpose | Our Implementation |
 |-----------|---------|-------------------|
-| Init Command | Initialize framework in new projects | `commands/init.md` |
+| Init Command | Initialize framework in new projects | `commands/setup.md` |
 | Templates | Default configurations | `templates/settings.json` |
 | Self-Contained | No external dependencies | All files in project |
 
 #### Init Command
 
 ```
-> /init
+> /setup
 ```
 
 Creates:
@@ -458,9 +458,9 @@ project/
 
 #### Verification
 
-- [ ] `commands/init.md` exists
+- [ ] `commands/setup.md` exists
 - [ ] `templates/settings.json` exists
-- [ ] `/init` creates full structure
+- [ ] `/setup` creates full structure
 - [ ] Framework works in fresh project
 
 ---
@@ -747,7 +747,7 @@ Bypasses orchestrator for focused, single-agent tasks.
 
 | Grade | Component | File | Status |
 |-------|-----------|------|--------|
-| **1** | Init command | `commands/init.md` | ✓ |
+| **1** | Init command | `commands/setup.md` | ✓ |
 | **1** | Settings template | `templates/settings.json` | ✓ |
 | **2** | Cycle command | `commands/cycle.md` | ✓ |
 | **2** | Feature command | `commands/feature.md` | ✓ |
@@ -791,7 +791,7 @@ Step 4: Class 1, Grade 4
 └── Enable feedback loop
 
 Step 5: Class 2, Grade 1
-├── Create commands/init.md
+├── Create commands/setup.md
 └── Create templates/settings.json
 
 Step 6: Class 2, Grade 2

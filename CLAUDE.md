@@ -69,7 +69,7 @@ codebase-singularity/
 │   ├── bugfix.md             # Bug investigation workflow
 │   ├── orchestrate.md        # Multi-agent coordination
 │   ├── delegate.md           # Direct agent invocation
-│   └── init.md               # Initialize in new projects
+│   └── setup.md               # Initialize in new projects
 ├── agents/                    # 9 specialized agents
 │   ├── 00-orchestrator.md    # Master coordinator
 │   ├── 01-planner.md         # Strategic planning
@@ -140,7 +140,7 @@ codebase-singularity/
 
 | Command | Purpose |
 |---------|---------|
-| `/init` | Initialize in new project |
+| `/setup` | Initialize in new project |
 
 ---
 

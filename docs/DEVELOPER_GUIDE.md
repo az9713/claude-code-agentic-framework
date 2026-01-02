@@ -111,7 +111,7 @@ codebase_singularity/
 │   ├── bugfix.md                # Bug investigation workflow
 │   ├── orchestrate.md           # Multi-agent coordination
 │   ├── delegate.md              # Direct agent invocation
-│   └── init.md                  # Initialize in new projects
+│   └── setup.md                  # Initialize in new projects
 │
 ├── agents/                      # 9 specialized agents
 │   ├── 00-orchestrator.md       # Master coordinator (opus)
@@ -593,7 +593,7 @@ description: What this command does
 
 | Command | File | Purpose |
 |---------|------|---------|
-| `/init` | `commands/init.md` | Initialize framework |
+| `/setup` | `commands/setup.md` | Initialize framework |
 
 ### 4.3 Command Implementation Examples
 

@@ -201,7 +201,7 @@ Plugin
 │   │   ├── orchestrate.md
 │   │   └── delegate.md
 │   └── Utility
-│       └── init.md
+│       └── setup.md
 │
 ├── Agents (9)
 │   ├── 00-orchestrator.md (opus)
@@ -959,7 +959,7 @@ codebase_singularity/
 │   ├── bugfix.md                # Bug investigation
 │   ├── orchestrate.md           # Multi-agent coordination
 │   ├── delegate.md              # Direct agent invocation
-│   └── init.md                  # Initialize framework
+│   └── setup.md                  # Initialize framework
 │
 ├── agents/                      # Specialized agents
 │   ├── 00-orchestrator.md       # Master coordinator

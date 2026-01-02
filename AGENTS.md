@@ -82,7 +82,7 @@ ls -la commands/ agents/ skills/ hooks/
 │   ├── bugfix.md          # Bug investigation workflow
 │   ├── orchestrate.md     # Multi-agent coordination
 │   ├── delegate.md        # Direct agent invocation
-│   └── init.md            # Initialize in new projects
+│   └── setup.md            # Initialize in new projects
 ├── agents/                # 9 specialized agents
 │   ├── 00-orchestrator.md # Coordinates other agents
 │   ├── 01-planner.md      # Plans implementations

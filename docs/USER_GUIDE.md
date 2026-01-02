@@ -51,7 +51,7 @@ The Codebase Singularity Framework turns Claude into your AI development team. I
 | Bug fixing | `/bugfix` | Investigation and fix workflow |
 | Multi-agent tasks | `/orchestrate` | Coordinate multiple agents |
 | Direct agent access | `/delegate` | Use specific agent |
-| New project setup | `/init` | Initialize framework |
+| New project setup | `/setup` | Initialize framework |
 
 ### 1.3 The Classification System
 
@@ -876,7 +876,7 @@ Always reload context first.
 /delegate [agent] [task]  # Direct agent access
 
 # Setup
-/init               # Initialize in new project
+/setup               # Initialize in new project
 ```
 
 ### Agent Quick Reference

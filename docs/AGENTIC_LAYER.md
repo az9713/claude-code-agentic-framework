@@ -259,12 +259,12 @@ This creates a self-correcting system where agents don't need to remember to for
 
 ### Class 2, Grade 1: Portable Structure
 
-**Files**: `commands/init.md`, `templates/settings.json`
+**Files**: `commands/setup.md`, `templates/settings.json`
 
 The framework can be initialized in any project:
 
 ```
-> /init
+> /setup
 ```
 
 This creates:
@@ -411,7 +411,7 @@ project/
 │   │   ├── bugfix.md             # Bug workflow
 │   │   ├── orchestrate.md        # Multi-agent (Grade 1+)
 │   │   ├── delegate.md           # Direct agent
-│   │   └── init.md               # Initialize framework
+│   │   └── setup.md               # Initialize framework
 │   │
 │   ├── agents/                   # Specialized agents (Grade 2)
 │   │   ├── 00-orchestrator.md

@@ -55,7 +55,7 @@ This document provides detailed documentation for every command in the Codebase 
 /orchestrate [task]    Multi-agent coordination
 /delegate [agent] [task] Direct agent invocation
 
-/init           Initialize framework in new project
+/setup           Initialize framework in new project
 ```
 
 ---
@@ -874,17 +874,17 @@ The delegate command invokes a specific agent for a focused task:
 
 ### init
 
-**Full Name**: `/init`
+**Full Name**: `/setup`
 
 **Purpose**: Initialize the Codebase Singularity framework in a new project.
 
-**File**: `commands/init.md`
+**File**: `commands/setup.md`
 
 #### Syntax
 
 ```
-/init
-/init [project-type]
+/setup
+/setup [project-type]
 ```
 
 #### Description
@@ -901,17 +901,17 @@ The init command sets up the framework structure in any project:
 #### Examples
 
 ```
-> /init
+> /setup
 ```
 *Standard initialization*
 
 ```
-> /init node
+> /setup node
 ```
 *Initialize for Node.js project*
 
 ```
-> /init python
+> /setup python
 ```
 *Initialize for Python project*
 
@@ -992,7 +992,7 @@ Next Steps:
 | Reported bug to investigate | `/bugfix` |
 | Complex multi-step task | `/orchestrate` |
 | Single focused task | `/delegate` |
-| New project setup | `/init` |
+| New project setup | `/setup` |
 
 ### Complexity Comparison
 

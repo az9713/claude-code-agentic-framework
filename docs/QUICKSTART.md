@@ -92,7 +92,7 @@ Currently at Class 3, Grade 1+ - the highest level of the agentic framework.
 | `/bugfix` | Bug investigation and fix |
 | `/orchestrate` | Multi-agent coordination |
 | `/delegate` | Direct agent invocation |
-| `/init` | Initialize in new project |
+| `/setup` | Initialize in new project |
 
 ---
 
@@ -542,7 +542,7 @@ Documentation is cached in `ai_docs/` for future reference.
 **Time**: 5 minutes
 
 ```
-> /init
+> /setup
 ```
 
 This creates:

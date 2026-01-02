@@ -75,7 +75,7 @@ This implementation is **Class 3, Grade 1+** - the highest level of the agentic 
 
 | Command | Purpose |
 |---------|---------|
-| `/init` | Initialize in new project |
+| `/setup` | Initialize in new project |
 
 ## Agents
 
@@ -140,7 +140,7 @@ The Plan-Build-Review-Fix cycle is the foundation:
 Initialize the framework in any project:
 
 ```
-/init
+/setup
 ```
 
 This creates the directory structure, CLAUDE.md, and configuration files.
