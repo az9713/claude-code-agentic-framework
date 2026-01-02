@@ -131,6 +131,9 @@ The Plan-Build-Review-Fix cycle is the foundation:
 | `docs/USER_GUIDE.md` | How to use the framework |
 | `docs/DEVELOPER_GUIDE.md` | Technical deep-dive |
 | `docs/AGENTIC_LAYER.md` | Core concept explanation |
+| `docs/CLASSIFICATION.md` | Class/Grade system reference |
+| `docs/HOOKS_GUIDE.md` | Hooks and feedback loops |
+| `docs/CONFIGURATION_GUIDE.md` | All settings and options |
 
 ## Using in New Projects
 
