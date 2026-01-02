@@ -100,11 +100,13 @@ Multi-agent coordination for complex tasks.
 
 This codebase implements **Class 3, Grade 1+** - the highest level.
 
-### Class 1, Grade 1: Memory
+### Class 1, Grade 1: Memory & Agent Instructions
 
-**Files**: `CLAUDE.md`, `commands/prime.md`
+**Files**: `CLAUDE.md`, `AGENTS.md`, `commands/prime.md`
 
-The foundation - giving AI context about your project:
+The foundation - giving AI context about your project through two complementary files:
+
+#### CLAUDE.md (Claude-Specific Memory)
 
 ```
 CLAUDE.md
@@ -117,6 +119,28 @@ CLAUDE.md
 ├── Coding Standards      # Quality expectations
 └── Agent Instructions    # How to behave
 ```
+
+#### AGENTS.md (Universal Agent Instructions)
+
+Following the [agents.md](https://agents.md) standard - works with 20+ AI tools:
+
+```
+AGENTS.md
+├── Project Overview      # Context for any AI agent
+├── Build and Test        # How to build/test
+├── Code Style            # Development conventions
+├── Project Structure     # Key directories
+├── Working with Framework# How to use commands
+├── Security              # Protected files, guidelines
+└── Commit/PR Guidelines  # Contribution standards
+```
+
+#### Why Two Files?
+
+| File | Audience | Purpose |
+|------|----------|---------|
+| `CLAUDE.md` | Claude Code only | Deep integration with Claude features |
+| `AGENTS.md` | All AI agents | Cross-platform compatibility |
 
 **Usage**:
 ```
@@ -517,7 +541,8 @@ The Agentic Layer is the infrastructure that transforms generic AI assistance in
 
 | Component | Purpose | Class/Grade |
 |-----------|---------|-------------|
-| CLAUDE.md | Project memory | Class 1, Grade 1 |
+| CLAUDE.md | Claude-specific memory | Class 1, Grade 1 |
+| AGENTS.md | Universal agent instructions | Class 1, Grade 1 |
 | Commands | Workflow instructions | Class 1, Grade 1 |
 | Agents | Specialized workers | Class 1, Grade 2 |
 | Skills | Knowledge modules | Class 1, Grade 3 |

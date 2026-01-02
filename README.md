@@ -103,7 +103,8 @@ This implementation is **Class 3, Grade 1+** - the highest level of the agentic 
 ├── templates/settings.json      # Project settings
 ├── specs/                        # Plans and reviews
 ├── ai_docs/                      # AI reference docs
-├── CLAUDE.md                     # Agent memory
+├── CLAUDE.md                     # Claude-specific memory
+├── AGENTS.md                     # Universal agent instructions
 ├── .mcp.json                     # MCP configuration
 └── README.md                     # This file
 ```
@@ -124,10 +125,12 @@ The Plan-Build-Review-Fix cycle is the foundation:
 
 | Document | Purpose |
 |----------|---------|
-| `CLAUDE.md` | Agent memory - read first |
-| `docs/QUICKSTART.md` | 10 educational use cases |
+| `CLAUDE.md` | Claude-specific memory - read first |
+| `AGENTS.md` | Universal AI agent instructions |
+| `docs/QUICKSTART.md` | 20 hands-on use cases |
 | `docs/USER_GUIDE.md` | How to use the framework |
 | `docs/DEVELOPER_GUIDE.md` | Technical deep-dive |
+| `docs/AGENTIC_LAYER.md` | Core concept explanation |
 
 ## Using in New Projects
 
