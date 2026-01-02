@@ -1,3 +1,7 @@
+---
+name: review
+description: Perform code quality review with scoring and actionable feedback. Checks for bugs, security, and best practices.
+---
 # Review Command - Code Quality Review
 
 ## Purpose
@@ -108,12 +112,16 @@ Create a report in this format:
 - [Positive observation 2]
 ```
 
-### Step 4: Present Options
+### Step 4: Save Report
+
+Save the report to `specs/reviews/[date]-review.md`
+
+### Step 5: Present Options
 
 After the review, offer:
-1. "Would you like me to fix the critical issues?"
+1. "Would you like me to fix the critical issues? (/project:fix)"
 2. "Would you like detailed explanations for any issue?"
-3. "Should I save this report to a file?"
+3. "Ready to proceed with fixes?"
 
 ## Review Depth Levels
 
@@ -142,3 +150,4 @@ User can specify: "Do a thorough review" or "Quick scan is fine"
 - Explain why something is an issue
 - Always provide solutions with problems
 - Acknowledge good code too
+- Consider delegating to the reviewer agent for thorough reviews

@@ -1,3 +1,7 @@
+---
+name: plan
+description: Create a detailed implementation plan before coding any feature. Planning first leads to better code.
+---
 # Plan Command - Create Implementation Plans
 
 ## Purpose
@@ -20,12 +24,14 @@ When this command is invoked with a task description:
 1. Clarify the user's request
 2. Identify what problem is being solved
 3. Note any constraints or preferences mentioned
+4. Ask clarifying questions if needed
 
 ### Step 2: Analyze Existing Code
 
 1. Look at relevant existing files
 2. Identify patterns to follow
 3. Note any code that will be affected
+4. Check for similar implementations to reference
 
 ### Step 3: Create the Plan
 
@@ -57,6 +63,10 @@ Structure the plan as follows:
 - [How to test this feature]
 - [Edge cases to cover]
 
+## Risk Assessment
+- [Potential issues]
+- [Mitigation strategies]
+
 ## Questions/Concerns
 - [Any unclear requirements]
 - [Potential issues to discuss]
@@ -71,9 +81,11 @@ Save the plan to `specs/[feature-name]-plan.md`
 Show the plan to the user and ask:
 - "Does this plan look correct?"
 - "Any changes before we proceed?"
+- "Ready to start building?"
 
 ## Notes
 
 - Keep plans focused and actionable
 - Include estimates only if asked
 - Plans should be detailed enough that anyone could implement them
+- Consider delegating to the planner agent for complex plans
