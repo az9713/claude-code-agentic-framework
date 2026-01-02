@@ -27,6 +27,14 @@
       "timeout": 5000
     },
     {
+      "name": "auto-review",
+      "event": "SubagentStop",
+      "command": "bash ${PROJECT_ROOT}/scripts/auto-review.sh \"$AGENT_NAME\" \"$STATUS\"",
+      "description": "Class 1 Grade 4 feedback loop - trigger review after builder/fixer complete",
+      "enabled": true,
+      "timeout": 10000
+    },
+    {
       "name": "quality-gate",
       "event": "Stop",
       "command": "bash ${PROJECT_ROOT}/scripts/quality-gate.sh",
@@ -50,6 +58,7 @@
       "$PROJECT_ROOT - Project root directory"
     ],
     "enabling": "Set enabled: true to activate a hook",
-    "timeout": "Maximum milliseconds to wait for hook to complete"
+    "timeout": "Maximum milliseconds to wait for hook to complete",
+    "feedback_loop": "auto-review implements Class 1, Grade 4 - triggers review after builder/fixer/refactorer agents complete"
   }
 }

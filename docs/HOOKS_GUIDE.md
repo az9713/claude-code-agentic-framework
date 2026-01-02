@@ -77,9 +77,11 @@ project/
 │   ├── auto-lint.sh       # Post-edit formatter
 │   ├── protect-files.sh   # Pre-edit protection
 │   ├── log-subagent.sh    # Agent activity logger
+│   ├── auto-review.sh     # Feedback loop trigger
 │   └── quality-gate.sh    # Quality verification
 └── logs/
     ├── subagent.log       # Agent activity log
+    ├── feedback-loop.log  # Feedback loop activity
     └── agent-stats.json   # Agent statistics
 ```
 
@@ -244,7 +246,7 @@ Available tools for filtering:
 
 ## Built-in Hooks
 
-The framework includes four pre-configured hooks:
+The framework includes five pre-configured hooks:
 
 ### 1. Auto-Lint Hook
 
@@ -351,7 +353,56 @@ The framework includes four pre-configured hooks:
 
 **Log Location**: `logs/subagent.log`
 
-### 4. Quality Gate Hook
+### 4. Auto-Review Hook (Feedback Loop)
+
+**Purpose**: Implement Class 1, Grade 4 feedback loop - automatically trigger review after code changes
+**Event**: SubagentStop
+**Status**: Enabled
+
+```json
+{
+  "name": "auto-review",
+  "event": "SubagentStop",
+  "command": "bash ${PROJECT_ROOT}/scripts/auto-review.sh \"$AGENT_NAME\" \"$STATUS\"",
+  "description": "Class 1 Grade 4 feedback loop - trigger review after builder/fixer complete",
+  "enabled": true,
+  "timeout": 10000
+}
+```
+
+**Trigger Agents**: This hook fires after these agents complete:
+- `builder` - After code implementation
+- `fixer` - After fixing issues
+- `refactorer` - After code improvements
+
+**Feedback Loop Flow**:
+
+```
+Builder completes successfully
+       │
+       ▼
+auto-review hook fires
+       │
+       ▼
+Prompts user to run /project:review
+       │
+       ▼
+If issues found → run /project:fix
+       │
+       ▼
+Fixer completes → auto-review fires again
+       │
+       ▼
+Loop until quality passes (max 3 iterations)
+```
+
+**Loop Protection**: Maximum 3 review iterations to prevent infinite loops.
+
+**Log Location**: `logs/feedback-loop.log`
+
+**Why This Matters**: This implements IndyDevDan's Class 1, Grade 4 concept - agents should automatically review work done by other agents, creating a self-correcting feedback loop.
+
+### 5. Quality Gate Hook
 
 **Purpose**: Verify quality before completing operations
 **Event**: Stop
@@ -497,6 +548,30 @@ LOG_DIR="${PROJECT_ROOT:-.}/logs"
 mkdir -p "$LOG_DIR"
 
 echo "{\"timestamp\": \"$TIMESTAMP\", \"agent\": \"$AGENT_NAME\", \"status\": \"$STATUS\"}" >> "$LOG_DIR/subagent.log"
+
+exit 0
+```
+
+### auto-review.sh
+
+**Purpose**: Implement Class 1, Grade 4 feedback loop
+**Exit Code**: Always 0 (informational)
+
+```bash
+#!/bin/bash
+AGENT_NAME="$1"
+STATUS="$2"
+
+# Only trigger for builder/fixer/refactorer agents
+REVIEW_TRIGGER_AGENTS=("builder" "fixer" "refactorer")
+
+for agent in "${REVIEW_TRIGGER_AGENTS[@]}"; do
+    if [ "$AGENT_NAME" == "$agent" ] && [ "$STATUS" == "success" ]; then
+        echo "FEEDBACK LOOP: Agent '$AGENT_NAME' completed."
+        echo "Recommendation: Run /project:review"
+        exit 0
+    fi
+done
 
 exit 0
 ```
