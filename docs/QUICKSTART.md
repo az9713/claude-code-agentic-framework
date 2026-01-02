@@ -55,7 +55,7 @@ You'll see the welcome screen with a `>` prompt.
 ### Step 5: Load Project Context (1 minute)
 
 ```
-> /project:prime
+> /prime
 ```
 
 **You're ready to go!**
@@ -82,17 +82,17 @@ Currently at Class 3, Grade 1+ - the highest level of the agentic framework.
 
 | Command | What It Does |
 |---------|--------------|
-| `/project:prime` | Load full project context |
-| `/project:plan` | Create an implementation plan |
-| `/project:build` | Implement from a plan |
-| `/project:review` | Quality analysis |
-| `/project:fix` | Address review findings |
-| `/project:cycle` | Complete Plan-Build-Review-Fix |
-| `/project:feature` | Full feature development |
-| `/project:bugfix` | Bug investigation and fix |
-| `/project:orchestrate` | Multi-agent coordination |
-| `/project:delegate` | Direct agent invocation |
-| `/project:init` | Initialize in new project |
+| `/prime` | Load full project context |
+| `/plan` | Create an implementation plan |
+| `/build` | Implement from a plan |
+| `/review` | Quality analysis |
+| `/fix` | Address review findings |
+| `/cycle` | Complete Plan-Build-Review-Fix |
+| `/feature` | Full feature development |
+| `/bugfix` | Bug investigation and fix |
+| `/orchestrate` | Multi-agent coordination |
+| `/delegate` | Direct agent invocation |
+| `/init` | Initialize in new project |
 
 ---
 
@@ -108,7 +108,7 @@ Complete these in order for the best learning experience. Each use case demonstr
 **Time**: 2 minutes
 
 ```
-> /project:prime
+> /prime
 ```
 
 Claude will:
@@ -117,7 +117,7 @@ Claude will:
 3. Understand project structure and standards
 4. Be ready to work with full context
 
-**What You Learned**: Always start with `/project:prime` - it's the foundation of the agentic layer.
+**What You Learned**: Always start with `/prime` - it's the foundation of the agentic layer.
 
 ---
 
@@ -127,7 +127,7 @@ Claude will:
 **Time**: 5 minutes
 
 ```
-> /project:plan Add input validation to user forms
+> /plan Add input validation to user forms
 ```
 
 The **planner agent** (using opus model) will:
@@ -149,7 +149,7 @@ The **planner agent** (using opus model) will:
 After creating a plan:
 
 ```
-> /project:build
+> /build
 ```
 
 The **builder agent** (using sonnet model) will:
@@ -168,7 +168,7 @@ The **builder agent** (using sonnet model) will:
 **Time**: 5 minutes
 
 ```
-> /project:review
+> /review
 ```
 
 The **reviewer agent** (using opus model) will produce:
@@ -189,10 +189,10 @@ Review is saved to `specs/reviews/`.
 **Goal**: Address issues using the fixer agent.
 **Time**: 5 minutes
 
-After running `/project:review`:
+After running `/review`:
 
 ```
-> /project:fix
+> /fix
 ```
 
 The **fixer agent** (using sonnet model) will:
@@ -211,7 +211,7 @@ The **fixer agent** (using sonnet model) will:
 **Time**: 5 minutes
 
 ```
-> /project:delegate test-writer Write tests for app/utils/validators.js
+> /delegate test-writer Write tests for app/utils/validators.js
 ```
 
 Available agents for delegation:
@@ -236,19 +236,19 @@ Available agents for delegation:
 Run review, then fix, then review again:
 
 ```
-> /project:review
+> /review
 ```
 
 Note the score (e.g., 5/10). Then:
 
 ```
-> /project:fix
+> /fix
 ```
 
 Then review again:
 
 ```
-> /project:review
+> /review
 ```
 
 The score should improve. This loop continues until quality gate passes (score >= 7).
@@ -263,7 +263,7 @@ The score should improve. This loop continues until quality gate passes (score >
 **Time**: 5 minutes
 
 ```
-> /project:delegate security-auditor Audit authentication handling
+> /delegate security-auditor Audit authentication handling
 ```
 
 The **security-auditor agent** (using opus model) checks for:
@@ -282,7 +282,7 @@ The **security-auditor agent** (using opus model) checks for:
 **Time**: 5 minutes
 
 ```
-> /project:delegate doc-fetcher Research JWT best practices and save to ai_docs/
+> /delegate doc-fetcher Research JWT best practices and save to ai_docs/
 ```
 
 The **doc-fetcher agent** (using haiku model) will:
@@ -301,7 +301,7 @@ The **doc-fetcher agent** (using haiku model) will:
 **Time**: 15 minutes
 
 ```
-> /project:cycle Add error logging utility
+> /cycle Add error logging utility
 ```
 
 This single command runs the complete cycle:
@@ -327,7 +327,7 @@ These showcase the full power of the Codebase Singularity.
 **Time**: 15 minutes
 
 ```
-> /project:cycle Add user input sanitization to all form handlers
+> /cycle Add user input sanitization to all form handlers
 ```
 
 This single command:
@@ -347,15 +347,15 @@ This single command:
 **Time**: 10 minutes
 
 ```
-> /project:delegate planner Design a REST API structure for user management
+> /delegate planner Design a REST API structure for user management
 ```
 
 ```
-> /project:delegate security-auditor Audit the authentication module
+> /delegate security-auditor Audit the authentication module
 ```
 
 ```
-> /project:delegate test-writer Write comprehensive tests for the API
+> /delegate test-writer Write comprehensive tests for the API
 ```
 
 Available agents:
@@ -378,7 +378,7 @@ Available agents:
 **Time**: 20 minutes
 
 ```
-> /project:orchestrate Implement a complete authentication system with:
+> /orchestrate Implement a complete authentication system with:
 > - User registration
 > - Login/logout
 > - Password reset
@@ -403,7 +403,7 @@ The orchestrator will:
 **Time**: 15 minutes
 
 ```
-> /project:feature Add a notification system that:
+> /feature Add a notification system that:
 > - Supports email and in-app notifications
 > - Has user preferences for notification types
 > - Includes a notification queue
@@ -428,7 +428,7 @@ This workflow:
 **Time**: 10 minutes
 
 ```
-> /project:bugfix Users report that login fails after password change
+> /bugfix Users report that login fails after password change
 ```
 
 The bugfix workflow:
@@ -448,7 +448,7 @@ The bugfix workflow:
 **Time**: 15 minutes
 
 ```
-> /project:orchestrate --parallel Create a data export feature
+> /orchestrate --parallel Create a data export feature
 ```
 
 With `--parallel` flag:
@@ -474,13 +474,13 @@ Group D: [reviewer]                   ← Wait for C
 **Time**: 15 minutes
 
 ```
-> /project:delegate security-auditor Review security requirements for payment processing
+> /delegate security-auditor Review security requirements for payment processing
 ```
 
 Then:
 
 ```
-> /project:orchestrate Implement payment processing following security audit
+> /orchestrate Implement payment processing following security audit
 ```
 
 Pattern: `security-auditor → planner → builder → security-auditor → reviewer`
@@ -495,19 +495,19 @@ Pattern: `security-auditor → planner → builder → security-auditor → revi
 **Time**: 15 minutes
 
 ```
-> /project:delegate planner Design the test cases for a caching layer
+> /delegate planner Design the test cases for a caching layer
 ```
 
 Then:
 
 ```
-> /project:delegate test-writer Write failing tests for the caching layer
+> /delegate test-writer Write failing tests for the caching layer
 ```
 
 Then:
 
 ```
-> /project:delegate builder Implement the caching layer to pass all tests
+> /delegate builder Implement the caching layer to pass all tests
 ```
 
 Pattern: `planner → test-writer → builder → reviewer → fixer`
@@ -522,12 +522,12 @@ Pattern: `planner → test-writer → builder → reviewer → fixer`
 **Time**: 10 minutes
 
 ```
-> /project:delegate doc-fetcher Research JWT authentication best practices
+> /delegate doc-fetcher Research JWT authentication best practices
 > and save to ai_docs/
 ```
 
 ```
-> /project:delegate doc-fetcher Get the official Express.js middleware documentation
+> /delegate doc-fetcher Get the official Express.js middleware documentation
 ```
 
 Documentation is cached in `ai_docs/` for future reference.
@@ -542,7 +542,7 @@ Documentation is cached in `ai_docs/` for future reference.
 **Time**: 5 minutes
 
 ```
-> /project:init
+> /init
 ```
 
 This creates:
@@ -581,7 +581,7 @@ You now know how to:
 
 Try these on your own:
 
-1. **Build a REST API**: Use `/project:feature` to create a complete API
+1. **Build a REST API**: Use `/feature` to create a complete API
 2. **Migrate a codebase**: Use orchestration to refactor legacy code
 3. **Security audit**: Use the security-auditor on an existing project
 4. **Custom agent**: Create a new agent for your specific needs
@@ -605,7 +605,7 @@ See `docs/DEVELOPER_GUIDE.md` for technical details.
 ### "Claude doesn't understand my project"
 
 ```
-> /project:prime
+> /prime
 ```
 This reloads all project context.
 
@@ -620,7 +620,7 @@ ls commands/
 
 Check available agents:
 ```
-> /project:delegate
+> /delegate
 ```
 (Without arguments shows available agents)
 
@@ -633,14 +633,14 @@ Lower your standards temporarily:
 
 Or focus on critical issues only:
 ```
-> /project:fix --critical-only
+> /fix --critical-only
 ```
 
 ### "Orchestration is too slow"
 
 Use parallel mode:
 ```
-> /project:orchestrate --parallel [task]
+> /orchestrate --parallel [task]
 ```
 
 ### "Changes aren't what I wanted"
@@ -662,25 +662,25 @@ Press `3` (No) and be more specific:
 
 ### Core Commands
 ```
-/project:prime      - Load context
-/project:plan       - Create plan
-/project:build      - Implement plan
-/project:review     - Quality check
-/project:fix        - Address issues
+/prime      - Load context
+/plan       - Create plan
+/build      - Implement plan
+/review     - Quality check
+/fix        - Address issues
 ```
 
 ### Workflow Commands
 ```
-/project:cycle      - Full P-B-R-F cycle
-/project:feature    - Feature development
-/project:bugfix     - Bug investigation
+/cycle      - Full P-B-R-F cycle
+/feature    - Feature development
+/bugfix     - Bug investigation
 ```
 
 ### Orchestration
 ```
-/project:orchestrate [task]           - Multi-agent
-/project:orchestrate --parallel [task] - Parallel execution
-/project:delegate [agent] [task]       - Direct delegation
+/orchestrate [task]           - Multi-agent
+/orchestrate --parallel [task] - Parallel execution
+/delegate [agent] [task]       - Direct delegation
 ```
 
 ### Available Agents

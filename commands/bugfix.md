@@ -19,9 +19,9 @@ Systematically investigate, fix, and verify bug resolutions. This command provid
 ## Syntax
 
 ```
-/project:bugfix [bug description]
-/project:bugfix --issue [issue-number]  # Reference GitHub/Jira issue
-/project:bugfix --regression [feature]  # Known regression
+/bugfix [bug description]
+/bugfix --issue [issue-number]  # Reference GitHub/Jira issue
+/bugfix --regression [feature]  # Known regression
 ```
 
 ## Instructions
@@ -261,7 +261,7 @@ const newItems = [...items, newItem];
 ## Example Execution
 
 ```
-User: /project:bugfix Users can't log in after password change
+User: /bugfix Users can't log in after password change
 
 > Starting Bug Investigation
 

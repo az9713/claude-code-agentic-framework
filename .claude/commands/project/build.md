@@ -108,7 +108,7 @@ and comprehensive tests covering all edge cases.
 
 Next Steps:
 1. Run tests: node tests/run.js
-2. Review changes: /project:review
+2. Review changes: /review
 3. Commit if satisfied: git add . && git commit
 ```
 

@@ -41,17 +41,17 @@ The Codebase Singularity Framework turns Claude into your AI development team. I
 
 | Task | Command | What Happens |
 |------|---------|--------------|
-| Start working | `/project:prime` | Load full project context |
-| Plan a feature | `/project:plan` | Create detailed implementation plan |
-| Build features | `/project:build` | Implement from plan |
-| Review code | `/project:review` | Quality analysis with scoring |
-| Fix issues | `/project:fix` | Address review findings |
-| Complete workflow | `/project:cycle` | Run Plan-Build-Review-Fix |
-| Feature development | `/project:feature` | Full feature workflow |
-| Bug fixing | `/project:bugfix` | Investigation and fix workflow |
-| Multi-agent tasks | `/project:orchestrate` | Coordinate multiple agents |
-| Direct agent access | `/project:delegate` | Use specific agent |
-| New project setup | `/project:init` | Initialize framework |
+| Start working | `/prime` | Load full project context |
+| Plan a feature | `/plan` | Create detailed implementation plan |
+| Build features | `/build` | Implement from plan |
+| Review code | `/review` | Quality analysis with scoring |
+| Fix issues | `/fix` | Address review findings |
+| Complete workflow | `/cycle` | Run Plan-Build-Review-Fix |
+| Feature development | `/feature` | Full feature workflow |
+| Bug fixing | `/bugfix` | Investigation and fix workflow |
+| Multi-agent tasks | `/orchestrate` | Coordinate multiple agents |
+| Direct agent access | `/delegate` | Use specific agent |
+| New project setup | `/init` | Initialize framework |
 
 ### 1.3 The Classification System
 
@@ -99,24 +99,24 @@ claude
 **Step 4: Load Context**
 
 ```
-> /project:prime
+> /prime
 ```
 
 **Step 5: Start Working**
 
 ```
-> /project:plan Add user authentication
+> /plan Add user authentication
 ```
 
 ### 2.2 First Session Workflow
 
 ```
-1. /project:prime              # Always start here
+1. /prime              # Always start here
 2. "What's in this project?"   # Get oriented
-3. /project:plan [task]        # Plan your work
-4. /project:build              # Implement
-5. /project:review             # Check quality
-6. /project:fix                # Fix any issues
+3. /plan [task]        # Plan your work
+4. /build              # Implement
+5. /review             # Check quality
+6. /fix                # Fix any issues
 ```
 
 ---
@@ -164,7 +164,7 @@ Everything revolves around the **Plan-Build-Review-Fix** cycle:
 
 ## 4. Core Commands
 
-### 4.1 `/project:prime` - Load Context
+### 4.1 `/prime` - Load Context
 
 **When to Use**: At the start of every session
 
@@ -176,7 +176,7 @@ Everything revolves around the **Plan-Build-Review-Fix** cycle:
 
 **Example**:
 ```
-> /project:prime
+> /prime
 
 Project Loaded: Codebase Singularity Framework
 
@@ -189,7 +189,7 @@ cycle, feature, bugfix, orchestrate, delegate, init
 What would you like to work on?
 ```
 
-### 4.2 `/project:plan` - Create Implementation Plan
+### 4.2 `/plan` - Create Implementation Plan
 
 **When to Use**: Before implementing any feature
 
@@ -202,7 +202,7 @@ What would you like to work on?
 
 **Example**:
 ```
-> /project:plan Add JWT authentication
+> /plan Add JWT authentication
 
 Creating implementation plan...
 
@@ -227,7 +227,7 @@ Approve this plan? (y/n)
 
 **Output**: Saved to `specs/[feature]-plan.md`
 
-### 4.3 `/project:build` - Implement Features
+### 4.3 `/build` - Implement Features
 
 **When to Use**: After plan is approved
 
@@ -240,7 +240,7 @@ Approve this plan? (y/n)
 
 **Example**:
 ```
-> /project:build
+> /build
 
 Reading plan: specs/jwt-auth-plan.md
 
@@ -257,7 +257,7 @@ Files created: 3
 Tests added: 5
 ```
 
-### 4.4 `/project:review` - Code Quality Review
+### 4.4 `/review` - Code Quality Review
 
 **When to Use**: After implementation, before committing
 
@@ -270,7 +270,7 @@ Tests added: 5
 
 **Example**:
 ```
-> /project:review
+> /review
 
 Reviewing recent changes...
 
@@ -296,7 +296,7 @@ Reviewing recent changes...
 
 **Output**: Saved to `specs/reviews/[date]-review.md`
 
-### 4.5 `/project:fix` - Address Issues
+### 4.5 `/fix` - Address Issues
 
 **When to Use**: After review identifies issues
 
@@ -309,7 +309,7 @@ Reviewing recent changes...
 
 **Example**:
 ```
-> /project:fix
+> /fix
 
 Reading review: specs/reviews/2026-01-01-review.md
 
@@ -327,7 +327,7 @@ All tests passing
 
 ## 5. Workflow Commands
 
-### 5.1 `/project:cycle` - Complete Development Cycle
+### 5.1 `/cycle` - Complete Development Cycle
 
 **When to Use**: For end-to-end feature development
 
@@ -339,7 +339,7 @@ All tests passing
 
 **Example**:
 ```
-> /project:cycle Add password reset feature
+> /cycle Add password reset feature
 
 ## Phase 1: Planning
 [Planner creates plan]
@@ -363,7 +363,7 @@ Quality: 9/10
 Ready to commit
 ```
 
-### 5.2 `/project:feature` - Feature Development Workflow
+### 5.2 `/feature` - Feature Development Workflow
 
 **When to Use**: For comprehensive feature development with all steps
 
@@ -385,7 +385,7 @@ Ready to commit
 
 **Example**:
 ```
-> /project:feature --with-security Add user profiles
+> /feature --with-security Add user profiles
 
 ## Step 1: Research
 [doc-fetcher researches patterns]
@@ -402,7 +402,7 @@ Confirm? (y/n)
 # Feature Complete!
 ```
 
-### 5.3 `/project:bugfix` - Bug Investigation Workflow
+### 5.3 `/bugfix` - Bug Investigation Workflow
 
 **When to Use**: When a bug is reported
 
@@ -416,7 +416,7 @@ Confirm? (y/n)
 
 **Example**:
 ```
-> /project:bugfix Login fails after password change
+> /bugfix Login fails after password change
 
 ## Phase 1: Intake
 Bug: Login fails after password change
@@ -445,7 +445,7 @@ Approve? (y/n)
 
 ## 6. Orchestration Commands
 
-### 6.1 `/project:orchestrate` - Multi-Agent Coordination
+### 6.1 `/orchestrate` - Multi-Agent Coordination
 
 **When to Use**: For complex tasks requiring multiple agents
 
@@ -464,7 +464,7 @@ Approve? (y/n)
 
 **Example**:
 ```
-> /project:orchestrate Add e-commerce checkout flow
+> /orchestrate Add e-commerce checkout flow
 
 # Orchestration Plan
 
@@ -488,11 +488,11 @@ Subtasks: 7
 Duration: 15 minutes
 ```
 
-### 6.2 `/project:delegate` - Direct Agent Invocation
+### 6.2 `/delegate` - Direct Agent Invocation
 
 **When to Use**: When you need a specific agent
 
-**Syntax**: `/project:delegate [agent] [task]`
+**Syntax**: `/delegate [agent] [task]`
 
 **Available Agents**:
 
@@ -509,13 +509,13 @@ Duration: 15 minutes
 
 **Examples**:
 ```
-> /project:delegate planner Design the API structure
+> /delegate planner Design the API structure
 
-> /project:delegate security-auditor Audit the auth module
+> /delegate security-auditor Audit the auth module
 
-> /project:delegate test-writer Add tests for userService
+> /delegate test-writer Add tests for userService
 
-> /project:delegate refactorer Clean up the utils folder
+> /delegate refactorer Clean up the utils folder
 ```
 
 ---
@@ -700,19 +700,19 @@ This is the core workflow for all development:
 
 **Manual (step by step)**:
 ```
-> /project:plan [feature]
+> /plan [feature]
 [Review and approve]
-> /project:build
+> /build
 [Review and approve]
-> /project:review
+> /review
 [Read report]
-> /project:fix
+> /fix
 [Verify fixes]
 ```
 
 **Automatic (complete cycle)**:
 ```
-> /project:cycle [feature]
+> /cycle [feature]
 [Runs all phases automatically]
 ```
 
@@ -725,7 +725,7 @@ This is the core workflow for all development:
 For complex tasks, agents can run in parallel:
 
 ```
-> /project:orchestrate --parallel Add analytics dashboard
+> /orchestrate --parallel Add analytics dashboard
 
 Parallel execution:
 ├── Group A: [planner, doc-fetcher] ──► Group B
@@ -737,10 +737,10 @@ Parallel execution:
 ### 10.2 Feature Branch Workflow
 
 ```
-1. /project:prime
-2. /project:plan [feature]
+1. /prime
+2. /plan [feature]
 3. git checkout -b feature/[name]
-4. /project:cycle [feature]
+4. /cycle [feature]
 5. git commit -m "feat: [feature]"
 6. Create PR
 ```
@@ -748,22 +748,22 @@ Parallel execution:
 ### 10.3 Security-First Development
 
 ```
-1. /project:plan [feature]
-2. /project:delegate security-auditor Review the plan
-3. /project:build
-4. /project:delegate security-auditor Audit implementation
-5. /project:review
-6. /project:fix
+1. /plan [feature]
+2. /delegate security-auditor Review the plan
+3. /build
+4. /delegate security-auditor Audit implementation
+5. /review
+6. /fix
 ```
 
 ### 10.4 Test-Driven Development
 
 ```
-1. /project:plan [feature]
-2. /project:delegate test-writer Write tests first
-3. /project:build (tests should now pass)
-4. /project:review
-5. /project:fix
+1. /plan [feature]
+2. /delegate test-writer Write tests first
+3. /build (tests should now pass)
+4. /review
+5. /fix
 ```
 
 ---
@@ -773,7 +773,7 @@ Parallel execution:
 ### 11.1 Always Start with Prime
 
 ```
-> /project:prime
+> /prime
 ```
 
 This ensures Claude has full project context.
@@ -782,7 +782,7 @@ This ensures Claude has full project context.
 
 For anything non-trivial:
 ```
-> /project:plan [feature]
+> /plan [feature]
 ```
 
 Review the plan before proceeding.
@@ -798,20 +798,20 @@ Run reviews:
 
 | Task Complexity | Command |
 |-----------------|---------|
-| Simple fix | `/project:fix` |
-| Single function | `/project:build` |
-| Small feature | `/project:cycle` |
-| Large feature | `/project:feature` |
-| Complex multi-part | `/project:orchestrate` |
+| Simple fix | `/fix` |
+| Single function | `/build` |
+| Small feature | `/cycle` |
+| Large feature | `/feature` |
+| Complex multi-part | `/orchestrate` |
 
 ### 11.5 Iterate Until Quality
 
 Don't accept low review scores:
 ```
 Review score: 5/10 ← Too low
-/project:fix
+/fix
 Review score: 7/10 ← Acceptable
-/project:fix
+/fix
 Review score: 9/10 ← Excellent
 ```
 
@@ -823,17 +823,17 @@ Review score: 9/10 ← Excellent
 
 **"Claude doesn't understand my project"**
 ```
-> /project:prime
+> /prime
 ```
 Always reload context first.
 
 **"Command not found"**
 - Check command spelling
 - Ensure you're in project directory
-- Commands start with `/project:`
+- Commands start with `/`
 
 **"Review score is low"**
-- Run `/project:fix` to address issues
+- Run `/fix` to address issues
 - Re-run review after fixes
 - Iterate until score ≥ 7
 
@@ -846,7 +846,7 @@ Always reload context first.
 
 ```
 > What commands are available?
-> Show me how to use /project:cycle
+> Show me how to use /cycle
 > Explain what the reviewer agent does
 ```
 
@@ -858,81 +858,81 @@ Always reload context first.
 
 ```bash
 # Starting up
-/project:prime              # Load context (always first!)
+/prime              # Load context (always first!)
 
 # Core workflow
-/project:plan [feature]     # Create plan
-/project:build              # Implement
-/project:review             # Quality check
-/project:fix                # Address issues
+/plan [feature]     # Create plan
+/build              # Implement
+/review             # Quality check
+/fix                # Address issues
 
 # Complete workflows
-/project:cycle [feature]    # Full PBRF cycle
-/project:feature [feature]  # Complete feature workflow
-/project:bugfix [bug]       # Bug investigation
+/cycle [feature]    # Full PBRF cycle
+/feature [feature]  # Complete feature workflow
+/bugfix [bug]       # Bug investigation
 
 # Orchestration
-/project:orchestrate [task] # Multi-agent coordination
-/project:delegate [agent] [task]  # Direct agent access
+/orchestrate [task] # Multi-agent coordination
+/delegate [agent] [task]  # Direct agent access
 
 # Setup
-/project:init               # Initialize in new project
+/init               # Initialize in new project
 ```
 
 ### Agent Quick Reference
 
 ```bash
 # Planning
-/project:delegate planner [task]
+/delegate planner [task]
 
 # Building
-/project:delegate builder [task]
+/delegate builder [task]
 
 # Reviewing
-/project:delegate reviewer [task]
+/delegate reviewer [task]
 
 # Fixing
-/project:delegate fixer [task]
+/delegate fixer [task]
 
 # Testing
-/project:delegate test-writer [task]
+/delegate test-writer [task]
 
 # Research
-/project:delegate doc-fetcher [task]
+/delegate doc-fetcher [task]
 
 # Security
-/project:delegate security-auditor [task]
+/delegate security-auditor [task]
 
 # Refactoring
-/project:delegate refactorer [task]
+/delegate refactorer [task]
 ```
 
 ### Workflow Templates
 
 **New Feature**:
 ```
-/project:prime
-/project:feature --with-docs Add [feature]
+/prime
+/feature --with-docs Add [feature]
 ```
 
 **Bug Fix**:
 ```
-/project:prime
-/project:bugfix [bug description]
+/prime
+/bugfix [bug description]
 ```
 
 **Code Cleanup**:
 ```
-/project:prime
-/project:delegate refactorer Clean up [area]
-/project:review
+/prime
+/delegate refactorer Clean up [area]
+/review
 ```
 
 **Security Audit**:
 ```
-/project:prime
-/project:delegate security-auditor Full security review
-/project:fix
+/prime
+/delegate security-auditor Full security review
+/fix
 ```
 
 ---

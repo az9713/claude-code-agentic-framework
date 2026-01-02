@@ -144,7 +144,7 @@ AGENTS.md
 
 **Usage**:
 ```
-> /project:prime
+> /prime
 ```
 
 This loads all context, making AI aware of your project's structure, standards, and available tools.
@@ -176,8 +176,8 @@ Nine specialized agents, each with a specific role:
 
 **Usage**:
 ```
-> /project:delegate planner Design authentication system
-> /project:delegate security-auditor Audit the login flow
+> /delegate planner Design authentication system
+> /delegate security-auditor Audit the login flow
 ```
 
 ---
@@ -264,7 +264,7 @@ This creates a self-correcting system where agents don't need to remember to for
 The framework can be initialized in any project:
 
 ```
-> /project:init
+> /init
 ```
 
 This creates:
@@ -289,14 +289,14 @@ Complete development workflows:
 #### The Cycle Command
 
 ```
-> /project:cycle Add user authentication
+> /cycle Add user authentication
 ```
 
 Executes the full Plan-Build-Review-Fix loop:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    /project:cycle                            │
+│                    /cycle                            │
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
 │   ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐  │
@@ -313,7 +313,7 @@ Executes the full Plan-Build-Review-Fix loop:
 #### The Feature Command
 
 ```
-> /project:feature Add notification system
+> /feature Add notification system
 ```
 
 Full feature development workflow:
@@ -324,7 +324,7 @@ Gather Requirements → Create Plan → Get Approval → Build → Test → Revi
 #### The Bugfix Command
 
 ```
-> /project:bugfix Login fails after password change
+> /bugfix Login fails after password change
 ```
 
 Structured bug investigation:
@@ -341,7 +341,7 @@ Intake → Investigate → Reproduce → Plan Fix → Implement → Verify → C
 Multi-agent coordination for complex tasks:
 
 ```
-> /project:orchestrate Implement complete authentication system
+> /orchestrate Implement complete authentication system
 ```
 
 The orchestrator:
@@ -465,7 +465,7 @@ User Request
      │
      ▼
 ┌─────────────────┐
-│  /project:prime │  ← Load context from CLAUDE.md
+│  /prime │  ← Load context from CLAUDE.md
 └────────┬────────┘
          │
          ▼

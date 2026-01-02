@@ -32,7 +32,7 @@ The foundational workflow for all development:
 ```
 
 ### Phase 1: Plan
-**Command**: `/project:plan [feature]`
+**Command**: `/plan [feature]`
 **Agent**: planner
 
 Activities:
@@ -45,7 +45,7 @@ Activities:
 Output: `specs/[feature]-plan.md`
 
 ### Phase 2: Build
-**Command**: `/project:build`
+**Command**: `/build`
 **Agent**: builder
 
 Activities:
@@ -58,7 +58,7 @@ Activities:
 Output: Working code + tests
 
 ### Phase 3: Review
-**Command**: `/project:review`
+**Command**: `/review`
 **Agent**: reviewer
 
 Activities:
@@ -71,7 +71,7 @@ Activities:
 Output: `specs/reviews/[date]-review.md`
 
 ### Phase 4: Fix
-**Command**: `/project:fix`
+**Command**: `/fix`
 **Agent**: fixer
 
 Activities:
@@ -87,11 +87,11 @@ Output: Fixed code + verification
 ### Feature Development
 
 ```
-1. /project:prime        # Load context
-2. /project:plan         # Design feature
-3. /project:build        # Implement
-4. /project:review       # Quality check
-5. /project:fix          # Address issues
+1. /prime        # Load context
+2. /plan         # Design feature
+3. /build        # Implement
+4. /review       # Quality check
+5. /fix          # Address issues
 6. [Repeat 4-5 until passing]
 7. git commit            # Save work
 ```
@@ -99,28 +99,28 @@ Output: Fixed code + verification
 ### Bug Fix
 
 ```
-1. /project:prime        # Load context
+1. /prime        # Load context
 2. [Investigate bug]     # Understand issue
-3. /project:plan bugfix  # Plan the fix
-4. /project:fix          # Implement fix
-5. /project:review       # Verify fix
+3. /plan bugfix  # Plan the fix
+4. /fix          # Implement fix
+5. /review       # Verify fix
 6. git commit            # Save work
 ```
 
 ### Refactoring
 
 ```
-1. /project:prime        # Load context
-2. /project:review       # Identify issues
-3. /project:plan refactor # Plan changes
-4. /project:build        # Implement refactor
-5. /project:review       # Verify improvement
+1. /prime        # Load context
+2. /review       # Identify issues
+3. /plan refactor # Plan changes
+4. /build        # Implement refactor
+5. /review       # Verify improvement
 6. git commit            # Save work
 ```
 
 ## Complete Cycle Command
 
-**Command**: `/project:cycle [feature]`
+**Command**: `/cycle [feature]`
 
 Runs the complete Plan-Build-Review-Fix cycle:
 
@@ -208,14 +208,14 @@ doc-fetcher → builder (docs) → reviewer
 
 | Command | Purpose |
 |---------|---------|
-| `/project:prime` | Initialize session |
-| `/project:plan` | Create implementation plan |
-| `/project:build` | Build from plan |
-| `/project:review` | Review code quality |
-| `/project:fix` | Fix review issues |
-| `/project:cycle` | Complete workflow |
-| `/project:orchestrate` | Multi-agent coordination |
-| `/project:delegate` | Direct agent invocation |
+| `/prime` | Initialize session |
+| `/plan` | Create implementation plan |
+| `/build` | Build from plan |
+| `/review` | Review code quality |
+| `/fix` | Fix review issues |
+| `/cycle` | Complete workflow |
+| `/orchestrate` | Multi-agent coordination |
+| `/delegate` | Direct agent invocation |
 
 ## Best Practices
 

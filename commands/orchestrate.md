@@ -19,10 +19,10 @@ Coordinate complex workflows that require multiple agents working together. The 
 ## Syntax
 
 ```
-/project:orchestrate [task description]
-/project:orchestrate --parallel [task]     # Maximize parallelism
-/project:orchestrate --sequential [task]   # Force sequential execution
-/project:orchestrate --plan-only [task]    # Show plan, don't execute
+/orchestrate [task description]
+/orchestrate --parallel [task]     # Maximize parallelism
+/orchestrate --sequential [task]   # Force sequential execution
+/orchestrate --plan-only [task]    # Show plan, don't execute
 ```
 
 ## Instructions

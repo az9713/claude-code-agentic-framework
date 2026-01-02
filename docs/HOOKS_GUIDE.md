@@ -384,10 +384,10 @@ Builder completes successfully
 auto-review hook fires
        │
        ▼
-Prompts user to run /project:review
+Prompts user to run /review
        │
        ▼
-If issues found → run /project:fix
+If issues found → run /fix
        │
        ▼
 Fixer completes → auto-review fires again
@@ -568,7 +568,7 @@ REVIEW_TRIGGER_AGENTS=("builder" "fixer" "refactorer")
 for agent in "${REVIEW_TRIGGER_AGENTS[@]}"; do
     if [ "$AGENT_NAME" == "$agent" ] && [ "$STATUS" == "success" ]; then
         echo "FEEDBACK LOOP: Agent '$AGENT_NAME' completed."
-        echo "Recommendation: Run /project:review"
+        echo "Recommendation: Run /review"
         exit 0
     fi
 done

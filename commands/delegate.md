@@ -19,13 +19,13 @@ Directly invoke a specific specialized agent for a targeted task. Use this when 
 ## Syntax
 
 ```
-/project:delegate [agent-name] [task description]
+/delegate [agent-name] [task description]
 
 Examples:
-/project:delegate planner Design the API structure
-/project:delegate reviewer Check this file for issues
-/project:delegate builder Create a validation utility
-/project:delegate security-auditor Audit the auth module
+/delegate planner Design the API structure
+/delegate reviewer Check this file for issues
+/delegate builder Create a validation utility
+/delegate security-auditor Audit the auth module
 ```
 
 ## Available Agents
@@ -74,7 +74,7 @@ Available agents:
 - security-auditor: Security analysis
 - refactorer: Code improvement
 
-Usage: /project:delegate [agent] [task]
+Usage: /delegate [agent] [task]
 ```
 
 ### Step 3: Prepare Context
@@ -141,9 +141,9 @@ Show agent output and status:
 
 **Example tasks:**
 ```
-/project:delegate planner Design the user authentication system
-/project:delegate planner Compare REST vs GraphQL for our API
-/project:delegate planner Create a migration plan for the database
+/delegate planner Design the user authentication system
+/delegate planner Compare REST vs GraphQL for our API
+/delegate planner Create a migration plan for the database
 ```
 
 ### builder
@@ -155,9 +155,9 @@ Show agent output and status:
 
 **Example tasks:**
 ```
-/project:delegate builder Create a date formatting utility
-/project:delegate builder Add validation to the user form
-/project:delegate builder Implement the search functionality
+/delegate builder Create a date formatting utility
+/delegate builder Add validation to the user form
+/delegate builder Implement the search functionality
 ```
 
 ### reviewer
@@ -169,9 +169,9 @@ Show agent output and status:
 
 **Example tasks:**
 ```
-/project:delegate reviewer Review app/services/userService.js
-/project:delegate reviewer Check the authentication module for issues
-/project:delegate reviewer Analyze code quality of recent changes
+/delegate reviewer Review app/services/userService.js
+/delegate reviewer Check the authentication module for issues
+/delegate reviewer Analyze code quality of recent changes
 ```
 
 ### fixer
@@ -183,9 +183,9 @@ Show agent output and status:
 
 **Example tasks:**
 ```
-/project:delegate fixer Fix the null pointer in getUserById
-/project:delegate fixer Address the issues from the last review
-/project:delegate fixer Resolve the failing tests
+/delegate fixer Fix the null pointer in getUserById
+/delegate fixer Address the issues from the last review
+/delegate fixer Resolve the failing tests
 ```
 
 ### test-writer
@@ -197,9 +197,9 @@ Show agent output and status:
 
 **Example tasks:**
 ```
-/project:delegate test-writer Write tests for the validation module
-/project:delegate test-writer Add edge case tests for date parsing
-/project:delegate test-writer Create integration tests for the API
+/delegate test-writer Write tests for the validation module
+/delegate test-writer Add edge case tests for date parsing
+/delegate test-writer Create integration tests for the API
 ```
 
 ### doc-fetcher
@@ -211,9 +211,9 @@ Show agent output and status:
 
 **Example tasks:**
 ```
-/project:delegate doc-fetcher Get JWT authentication best practices
-/project:delegate doc-fetcher Document the Express.js middleware API
-/project:delegate doc-fetcher Research caching strategies
+/delegate doc-fetcher Get JWT authentication best practices
+/delegate doc-fetcher Document the Express.js middleware API
+/delegate doc-fetcher Research caching strategies
 ```
 
 ### security-auditor
@@ -225,9 +225,9 @@ Show agent output and status:
 
 **Example tasks:**
 ```
-/project:delegate security-auditor Audit the authentication system
-/project:delegate security-auditor Check for SQL injection vulnerabilities
-/project:delegate security-auditor Review data encryption practices
+/delegate security-auditor Audit the authentication system
+/delegate security-auditor Check for SQL injection vulnerabilities
+/delegate security-auditor Review data encryption practices
 ```
 
 ### refactorer
@@ -239,43 +239,43 @@ Show agent output and status:
 
 **Example tasks:**
 ```
-/project:delegate refactorer Clean up the utility functions
-/project:delegate refactorer Reduce complexity in the order processor
-/project:delegate refactorer Extract common patterns into helpers
+/delegate refactorer Clean up the utility functions
+/delegate refactorer Reduce complexity in the order processor
+/delegate refactorer Extract common patterns into helpers
 ```
 
 ## Quick Reference
 
 ```bash
 # Planning
-/project:delegate planner [design/analyze/plan something]
+/delegate planner [design/analyze/plan something]
 
 # Building
-/project:delegate builder [create/implement/add something]
+/delegate builder [create/implement/add something]
 
 # Reviewing
-/project:delegate reviewer [review/check/analyze file or feature]
+/delegate reviewer [review/check/analyze file or feature]
 
 # Fixing
-/project:delegate fixer [fix/resolve/address issue]
+/delegate fixer [fix/resolve/address issue]
 
 # Testing
-/project:delegate test-writer [write/add/create tests for X]
+/delegate test-writer [write/add/create tests for X]
 
 # Research
-/project:delegate doc-fetcher [research/document/find X]
+/delegate doc-fetcher [research/document/find X]
 
 # Security
-/project:delegate security-auditor [audit/check/review security of X]
+/delegate security-auditor [audit/check/review security of X]
 
 # Refactoring
-/project:delegate refactorer [improve/clean/refactor X]
+/delegate refactorer [improve/clean/refactor X]
 ```
 
 ## Notes
 
 - Delegate is for focused, single-agent tasks
-- For complex multi-agent work, use `/project:orchestrate`
+- For complex multi-agent work, use `/orchestrate`
 - Agent output is returned directly to you
 - Failed delegations can be retried with more context
 - Agents follow CLAUDE.md conventions automatically

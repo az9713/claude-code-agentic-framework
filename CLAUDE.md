@@ -115,32 +115,32 @@ codebase-singularity/
 
 | Command | Purpose | Agent |
 |---------|---------|-------|
-| `/project:prime` | Activate with full context | - |
-| `/project:plan` | Create implementation plan | planner |
-| `/project:build` | Implement from plan | builder |
-| `/project:review` | Quality analysis | reviewer |
-| `/project:fix` | Address issues | fixer |
+| `/prime` | Activate with full context | - |
+| `/plan` | Create implementation plan | planner |
+| `/build` | Implement from plan | builder |
+| `/review` | Quality analysis | reviewer |
+| `/fix` | Address issues | fixer |
 
 ### E2E Workflow Commands
 
 | Command | Purpose |
 |---------|---------|
-| `/project:cycle` | Complete Plan-Build-Review-Fix cycle |
-| `/project:feature` | Full feature development workflow |
-| `/project:bugfix` | Bug investigation and fix |
+| `/cycle` | Complete Plan-Build-Review-Fix cycle |
+| `/feature` | Full feature development workflow |
+| `/bugfix` | Bug investigation and fix |
 
 ### Orchestration Commands
 
 | Command | Purpose |
 |---------|---------|
-| `/project:orchestrate` | Multi-agent coordination |
-| `/project:delegate [agent]` | Direct agent invocation |
+| `/orchestrate` | Multi-agent coordination |
+| `/delegate [agent]` | Direct agent invocation |
 
 ### Utility Commands
 
 | Command | Purpose |
 |---------|---------|
-| `/project:init` | Initialize in new project |
+| `/init` | Initialize in new project |
 
 ---
 
@@ -231,7 +231,7 @@ Analyze → Decompose → Delegate → Monitor → Aggregate → Report
 ### When Starting a Session
 
 1. Read this CLAUDE.md file
-2. Run `/project:prime` to load context
+2. Run `/prime` to load context
 3. Check `/specs/` for pending work
 4. Understand current state before acting
 
@@ -274,26 +274,26 @@ Analyze → Decompose → Delegate → Monitor → Aggregate → Report
 
 ### Starting Work
 ```
-/project:prime              # Load context
-/project:plan [feature]     # Create plan
-/project:build              # Implement
-/project:review             # Check quality
-/project:fix                # Address issues
+/prime              # Load context
+/plan [feature]     # Create plan
+/build              # Implement
+/review             # Check quality
+/fix                # Address issues
 ```
 
 ### Complete Workflows
 ```
-/project:cycle [feature]    # Full PBRF cycle
-/project:feature [feature]  # Feature workflow
-/project:bugfix [bug]       # Bug fix workflow
+/cycle [feature]    # Full PBRF cycle
+/feature [feature]  # Feature workflow
+/bugfix [bug]       # Bug fix workflow
 ```
 
 ### Agent Delegation
 ```
-/project:delegate planner [task]
-/project:delegate builder [task]
-/project:delegate reviewer [task]
-/project:orchestrate [complex task]
+/delegate planner [task]
+/delegate builder [task]
+/delegate reviewer [task]
+/orchestrate [complex task]
 ```
 
 ---

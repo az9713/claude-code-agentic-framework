@@ -24,7 +24,7 @@ Examples:
 
 ## Template
 
-When creating a new plan, use `/project:plan` command or follow this template:
+When creating a new plan, use `/plan` command or follow this template:
 
 ```markdown
 # Implementation Plan: [Feature Name]
@@ -47,7 +47,7 @@ When creating a new plan, use `/project:plan` command or follow this template:
 
 ## Usage
 
-1. Create plan: `/project:plan` + describe what you want
+1. Create plan: `/plan` + describe what you want
 2. Review and approve the plan
-3. Implement: `/project:build`
-4. Review: `/project:review`
+3. Implement: `/build`
+4. Review: `/review`

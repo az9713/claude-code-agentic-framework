@@ -42,20 +42,20 @@ This document provides detailed documentation for every command in the Codebase 
 ### Quick Reference
 
 ```
-/project:prime          Load project context
-/project:plan [task]    Create implementation plan
-/project:build          Implement from plan
-/project:review         Quality analysis
-/project:fix            Address issues
+/prime          Load project context
+/plan [task]    Create implementation plan
+/build          Implement from plan
+/review         Quality analysis
+/fix            Address issues
 
-/project:cycle [task]   Complete P-B-R-F cycle
-/project:feature [desc] Full feature development
-/project:bugfix [desc]  Bug investigation and fix
+/cycle [task]   Complete P-B-R-F cycle
+/feature [desc] Full feature development
+/bugfix [desc]  Bug investigation and fix
 
-/project:orchestrate [task]    Multi-agent coordination
-/project:delegate [agent] [task] Direct agent invocation
+/orchestrate [task]    Multi-agent coordination
+/delegate [agent] [task] Direct agent invocation
 
-/project:init           Initialize framework in new project
+/init           Initialize framework in new project
 ```
 
 ---
@@ -64,7 +64,7 @@ This document provides detailed documentation for every command in the Codebase 
 
 ### prime
 
-**Full Name**: `/project:prime`
+**Full Name**: `/prime`
 
 **Purpose**: Activate the Codebase Singularity by loading full project context.
 
@@ -73,8 +73,8 @@ This document provides detailed documentation for every command in the Codebase 
 #### Syntax
 
 ```
-/project:prime
-/project:prime [specific focus]
+/prime
+/prime [specific focus]
 ```
 
 #### Description
@@ -89,12 +89,12 @@ The prime command is the **first command** you should run in any session. It:
 #### Examples
 
 ```
-> /project:prime
+> /prime
 ```
 *Loads full project context*
 
 ```
-> /project:prime Focus on the authentication module
+> /prime Focus on the authentication module
 ```
 *Loads context with emphasis on auth*
 
@@ -107,9 +107,9 @@ Classification: Class 3, Grade 1+
 Working Directory: /path/to/project
 
 Available Commands:
-- /project:plan, /project:build, /project:review, /project:fix
-- /project:cycle, /project:feature, /project:bugfix
-- /project:orchestrate, /project:delegate
+- /plan, /build, /review, /fix
+- /cycle, /feature, /bugfix
+- /orchestrate, /delegate
 
 Ready for work.
 ```
@@ -125,7 +125,7 @@ Ready for work.
 
 ### plan
 
-**Full Name**: `/project:plan`
+**Full Name**: `/plan`
 
 **Purpose**: Create a detailed implementation plan before building.
 
@@ -136,7 +136,7 @@ Ready for work.
 #### Syntax
 
 ```
-/project:plan [task description]
+/plan [task description]
 ```
 
 #### Description
@@ -152,15 +152,15 @@ The plan command creates a structured implementation plan that includes:
 #### Examples
 
 ```
-> /project:plan Add user authentication with JWT
+> /plan Add user authentication with JWT
 ```
 
 ```
-> /project:plan Refactor the payment processing module
+> /plan Refactor the payment processing module
 ```
 
 ```
-> /project:plan Create REST API for user management
+> /plan Create REST API for user management
 ```
 
 #### Output Location
@@ -214,7 +214,7 @@ Plans are saved to: `specs/plans/[date]-[feature].md`
 
 ### build
 
-**Full Name**: `/project:build`
+**Full Name**: `/build`
 
 **Purpose**: Implement code based on an existing plan.
 
@@ -225,8 +225,8 @@ Plans are saved to: `specs/plans/[date]-[feature].md`
 #### Syntax
 
 ```
-/project:build
-/project:build [specific guidance]
+/build
+/build [specific guidance]
 ```
 
 #### Description
@@ -242,12 +242,12 @@ The build command implements code following an existing plan. It:
 #### Examples
 
 ```
-> /project:build
+> /build
 ```
 *Builds from most recent plan*
 
 ```
-> /project:build Focus on the core module first
+> /build Focus on the core module first
 ```
 *Builds with specific priority*
 
@@ -267,7 +267,7 @@ The build command implements code following an existing plan. It:
 
 #### When to Use
 
-- After `/project:plan` completes
+- After `/plan` completes
 - When you have an approved plan
 - To continue interrupted implementation
 
@@ -275,7 +275,7 @@ The build command implements code following an existing plan. It:
 
 ### review
 
-**Full Name**: `/project:review`
+**Full Name**: `/review`
 
 **Purpose**: Analyze code quality and produce a review report.
 
@@ -286,8 +286,8 @@ The build command implements code following an existing plan. It:
 #### Syntax
 
 ```
-/project:review
-/project:review [specific files or focus]
+/review
+/review [specific files or focus]
 ```
 
 #### Description
@@ -302,17 +302,17 @@ The review command performs comprehensive code review:
 #### Examples
 
 ```
-> /project:review
+> /review
 ```
 *Reviews recent changes*
 
 ```
-> /project:review app/services/
+> /review app/services/
 ```
 *Reviews specific directory*
 
 ```
-> /project:review Focus on security
+> /review Focus on security
 ```
 *Reviews with security emphasis*
 
@@ -376,7 +376,7 @@ Reviews are saved to: `specs/reviews/[date]-review.md`
 
 #### When to Use
 
-- After `/project:build` completes
+- After `/build` completes
 - Before committing code
 - For periodic code audits
 - When you want quality assessment
@@ -385,7 +385,7 @@ Reviews are saved to: `specs/reviews/[date]-review.md`
 
 ### fix
 
-**Full Name**: `/project:fix`
+**Full Name**: `/fix`
 
 **Purpose**: Address issues identified in code review.
 
@@ -396,8 +396,8 @@ Reviews are saved to: `specs/reviews/[date]-review.md`
 #### Syntax
 
 ```
-/project:fix
-/project:fix [specific focus]
+/fix
+/fix [specific focus]
 ```
 
 #### Description
@@ -413,17 +413,17 @@ The fix command resolves issues from the most recent review:
 #### Examples
 
 ```
-> /project:fix
+> /fix
 ```
 *Fixes all issues from latest review*
 
 ```
-> /project:fix --critical-only
+> /fix --critical-only
 ```
 *Fixes only critical issues*
 
 ```
-> /project:fix Focus on security issues
+> /fix Focus on security issues
 ```
 *Prioritizes security fixes*
 
@@ -442,7 +442,7 @@ The fix command resolves issues from the most recent review:
 
 #### When to Use
 
-- After `/project:review` with score < 7
+- After `/review` with score < 7
 - When there are known issues to fix
 - As part of the build-review-fix loop
 
@@ -452,7 +452,7 @@ The fix command resolves issues from the most recent review:
 
 ### cycle
 
-**Full Name**: `/project:cycle`
+**Full Name**: `/cycle`
 
 **Purpose**: Execute complete Plan-Build-Review-Fix workflow.
 
@@ -463,7 +463,7 @@ The fix command resolves issues from the most recent review:
 #### Syntax
 
 ```
-/project:cycle [task description]
+/cycle [task description]
 ```
 
 #### Description
@@ -477,15 +477,15 @@ PLAN → BUILD → REVIEW → FIX (loop until score ≥ 7)
 #### Examples
 
 ```
-> /project:cycle Add user registration
+> /cycle Add user registration
 ```
 
 ```
-> /project:cycle Implement caching layer
+> /cycle Implement caching layer
 ```
 
 ```
-> /project:cycle Refactor database access
+> /cycle Refactor database access
 ```
 
 #### Workflow
@@ -527,7 +527,7 @@ PLAN → BUILD → REVIEW → FIX (loop until score ≥ 7)
 
 ### feature
 
-**Full Name**: `/project:feature`
+**Full Name**: `/feature`
 
 **Purpose**: Full feature development with requirements gathering.
 
@@ -538,7 +538,7 @@ PLAN → BUILD → REVIEW → FIX (loop until score ≥ 7)
 #### Syntax
 
 ```
-/project:feature [feature description]
+/feature [feature description]
 ```
 
 #### Description
@@ -555,11 +555,11 @@ The feature command is an enhanced cycle that includes:
 #### Examples
 
 ```
-> /project:feature Add user notifications with email and in-app support
+> /feature Add user notifications with email and in-app support
 ```
 
 ```
-> /project:feature Create admin dashboard for user management
+> /feature Create admin dashboard for user management
 ```
 
 #### Differences from Cycle
@@ -582,7 +582,7 @@ The feature command is an enhanced cycle that includes:
 
 ### bugfix
 
-**Full Name**: `/project:bugfix`
+**Full Name**: `/bugfix`
 
 **Purpose**: Structured bug investigation and fix.
 
@@ -593,9 +593,9 @@ The feature command is an enhanced cycle that includes:
 #### Syntax
 
 ```
-/project:bugfix [bug description]
-/project:bugfix --issue [issue-number]
-/project:bugfix --regression [feature]
+/bugfix [bug description]
+/bugfix --issue [issue-number]
+/bugfix --regression [feature]
 ```
 
 #### Description
@@ -611,15 +611,15 @@ The bugfix command follows a systematic approach:
 #### Examples
 
 ```
-> /project:bugfix Login fails after password change
+> /bugfix Login fails after password change
 ```
 
 ```
-> /project:bugfix --issue 234
+> /bugfix --issue 234
 ```
 
 ```
-> /project:bugfix --regression authentication
+> /bugfix --regression authentication
 ```
 
 #### Investigation Checklist
@@ -669,7 +669,7 @@ The bugfix command follows a systematic approach:
 
 ### orchestrate
 
-**Full Name**: `/project:orchestrate`
+**Full Name**: `/orchestrate`
 
 **Purpose**: Coordinate multiple agents for complex tasks.
 
@@ -680,10 +680,10 @@ The bugfix command follows a systematic approach:
 #### Syntax
 
 ```
-/project:orchestrate [task description]
-/project:orchestrate --parallel [task]
-/project:orchestrate --sequential [task]
-/project:orchestrate --plan-only [task]
+/orchestrate [task description]
+/orchestrate --parallel [task]
+/orchestrate --sequential [task]
+/orchestrate --plan-only [task]
 ```
 
 #### Description
@@ -699,15 +699,15 @@ The orchestrate command coordinates multiple specialized agents:
 #### Examples
 
 ```
-> /project:orchestrate Implement complete authentication system
+> /orchestrate Implement complete authentication system
 ```
 
 ```
-> /project:orchestrate --parallel Create data export feature
+> /orchestrate --parallel Create data export feature
 ```
 
 ```
-> /project:orchestrate --plan-only Design API structure
+> /orchestrate --plan-only Design API structure
 ```
 
 #### Execution Modes
@@ -775,7 +775,7 @@ Subtasks:
 
 ### delegate
 
-**Full Name**: `/project:delegate`
+**Full Name**: `/delegate`
 
 **Purpose**: Directly invoke a specific agent.
 
@@ -784,7 +784,7 @@ Subtasks:
 #### Syntax
 
 ```
-/project:delegate [agent-name] [task description]
+/delegate [agent-name] [task description]
 ```
 
 #### Description
@@ -813,31 +813,31 @@ The delegate command invokes a specific agent for a focused task:
 #### Examples
 
 ```
-> /project:delegate planner Design the API structure
+> /delegate planner Design the API structure
 ```
 
 ```
-> /project:delegate reviewer Check app/services/ for issues
+> /delegate reviewer Check app/services/ for issues
 ```
 
 ```
-> /project:delegate builder Create a validation utility
+> /delegate builder Create a validation utility
 ```
 
 ```
-> /project:delegate security-auditor Audit the auth module
+> /delegate security-auditor Audit the auth module
 ```
 
 ```
-> /project:delegate test-writer Write tests for the API
+> /delegate test-writer Write tests for the API
 ```
 
 ```
-> /project:delegate doc-fetcher Research JWT best practices
+> /delegate doc-fetcher Research JWT best practices
 ```
 
 ```
-> /project:delegate refactorer Clean up the utility functions
+> /delegate refactorer Clean up the utility functions
 ```
 
 #### Output Format
@@ -874,7 +874,7 @@ The delegate command invokes a specific agent for a focused task:
 
 ### init
 
-**Full Name**: `/project:init`
+**Full Name**: `/init`
 
 **Purpose**: Initialize the Codebase Singularity framework in a new project.
 
@@ -883,8 +883,8 @@ The delegate command invokes a specific agent for a focused task:
 #### Syntax
 
 ```
-/project:init
-/project:init [project-type]
+/init
+/init [project-type]
 ```
 
 #### Description
@@ -901,17 +901,17 @@ The init command sets up the framework structure in any project:
 #### Examples
 
 ```
-> /project:init
+> /init
 ```
 *Standard initialization*
 
 ```
-> /project:init node
+> /init node
 ```
 *Initialize for Node.js project*
 
 ```
-> /project:init python
+> /init python
 ```
 *Initialize for Python project*
 
@@ -948,8 +948,8 @@ Created:
 
 Next Steps:
 1. Edit CLAUDE.md with project details
-2. Run /project:prime to activate
-3. Start developing with /project:plan
+2. Run /prime to activate
+3. Start developing with /plan
 ```
 
 #### When to Use
@@ -982,17 +982,17 @@ Next Steps:
 
 | Scenario | Recommended Command |
 |----------|-------------------|
-| Start of session | `/project:prime` |
-| Need to think through approach | `/project:plan` |
-| Have a plan, ready to code | `/project:build` |
-| Want quality assessment | `/project:review` |
-| Have review findings to address | `/project:fix` |
-| Complete feature with quality gates | `/project:cycle` |
-| New feature with unclear requirements | `/project:feature` |
-| Reported bug to investigate | `/project:bugfix` |
-| Complex multi-step task | `/project:orchestrate` |
-| Single focused task | `/project:delegate` |
-| New project setup | `/project:init` |
+| Start of session | `/prime` |
+| Need to think through approach | `/plan` |
+| Have a plan, ready to code | `/build` |
+| Want quality assessment | `/review` |
+| Have review findings to address | `/fix` |
+| Complete feature with quality gates | `/cycle` |
+| New feature with unclear requirements | `/feature` |
+| Reported bug to investigate | `/bugfix` |
+| Complex multi-step task | `/orchestrate` |
+| Single focused task | `/delegate` |
+| New project setup | `/init` |
 
 ### Complexity Comparison
 
@@ -1014,30 +1014,30 @@ prime  delegate  plan  build  review  fix  cycle  bugfix  feature  orchestrate
 
 **Standard Development Flow**:
 ```
-1. /project:prime           # Load context
-2. /project:plan [feature]  # Plan first
-3. /project:build           # Implement
-4. /project:review          # Check quality
-5. /project:fix             # Address issues (if needed)
+1. /prime           # Load context
+2. /plan [feature]  # Plan first
+3. /build           # Implement
+4. /review          # Check quality
+5. /fix             # Address issues (if needed)
 ```
 
 **Quick Fix Flow**:
 ```
-1. /project:prime
-2. /project:delegate fixer [issue]
-3. /project:review
+1. /prime
+2. /delegate fixer [issue]
+3. /review
 ```
 
 **Investigation Flow**:
 ```
-1. /project:prime
-2. /project:bugfix [description]
+1. /prime
+2. /bugfix [description]
 ```
 
 **Complex Feature Flow**:
 ```
-1. /project:prime
-2. /project:feature [description]
+1. /prime
+2. /feature [description]
 ```
 
 ### Tips

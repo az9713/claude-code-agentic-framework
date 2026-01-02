@@ -28,20 +28,20 @@ This implementation is **Class 3, Grade 1+** - the highest level of the agentic 
 
 2. **Activate with context**:
    ```
-   /project:prime
+   /prime
    ```
 
 3. **Start developing**:
    ```
-   /project:plan Add user authentication
-   /project:build
-   /project:review
-   /project:fix
+   /plan Add user authentication
+   /build
+   /review
+   /fix
    ```
 
    Or use the complete cycle:
    ```
-   /project:cycle Add user authentication
+   /cycle Add user authentication
    ```
 
 ## Commands
@@ -50,32 +50,32 @@ This implementation is **Class 3, Grade 1+** - the highest level of the agentic 
 
 | Command | Purpose |
 |---------|---------|
-| `/project:prime` | Activate with full context |
-| `/project:plan` | Create implementation plan |
-| `/project:build` | Implement from plan |
-| `/project:review` | Quality analysis |
-| `/project:fix` | Address issues |
+| `/prime` | Activate with full context |
+| `/plan` | Create implementation plan |
+| `/build` | Implement from plan |
+| `/review` | Quality analysis |
+| `/fix` | Address issues |
 
 ### E2E Workflows
 
 | Command | Purpose |
 |---------|---------|
-| `/project:cycle` | Complete Plan-Build-Review-Fix |
-| `/project:feature` | Full feature development |
-| `/project:bugfix` | Bug investigation and fix |
+| `/cycle` | Complete Plan-Build-Review-Fix |
+| `/feature` | Full feature development |
+| `/bugfix` | Bug investigation and fix |
 
 ### Orchestration
 
 | Command | Purpose |
 |---------|---------|
-| `/project:orchestrate` | Multi-agent coordination |
-| `/project:delegate` | Direct agent invocation |
+| `/orchestrate` | Multi-agent coordination |
+| `/delegate` | Direct agent invocation |
 
 ### Utility
 
 | Command | Purpose |
 |---------|---------|
-| `/project:init` | Initialize in new project |
+| `/init` | Initialize in new project |
 
 ## Agents
 
@@ -140,7 +140,7 @@ The Plan-Build-Review-Fix cycle is the foundation:
 Initialize the framework in any project:
 
 ```
-/project:init
+/init
 ```
 
 This creates the directory structure, CLAUDE.md, and configuration files.

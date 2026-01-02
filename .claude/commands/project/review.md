@@ -119,7 +119,7 @@ Save the report to `specs/reviews/[date]-review.md`
 ### Step 5: Present Options
 
 After the review, offer:
-1. "Would you like me to fix the critical issues? (/project:fix)"
+1. "Would you like me to fix the critical issues? (/fix)"
 2. "Would you like detailed explanations for any issue?"
 3. "Ready to proceed with fixes?"
 

@@ -107,7 +107,7 @@ AGENTS.md
 #### Usage
 
 ```
-> /project:prime
+> /prime
 ```
 
 This loads all context, making AI aware of your project.
@@ -117,7 +117,7 @@ This loads all context, making AI aware of your project.
 - [ ] `CLAUDE.md` exists at project root
 - [ ] `AGENTS.md` exists at project root
 - [ ] `commands/prime.md` exists
-- [ ] `/project:prime` loads context successfully
+- [ ] `/prime` loads context successfully
 
 ---
 
@@ -223,9 +223,9 @@ tools:
 #### Usage
 
 ```
-> /project:delegate planner Design authentication system
-> /project:delegate builder Implement the login form
-> /project:delegate reviewer Review the authentication code
+> /delegate planner Design authentication system
+> /delegate builder Implement the login form
+> /delegate reviewer Review the authentication code
 ```
 
 #### Verification
@@ -233,7 +233,7 @@ tools:
 - [ ] 9 agent files exist in `agents/`
 - [ ] Each agent has YAML frontmatter
 - [ ] Each agent specifies model and tools
-- [ ] `/project:delegate` invokes agents correctly
+- [ ] `/delegate` invokes agents correctly
 
 ---
 
@@ -340,7 +340,7 @@ skills/
 │        ▼                                                     │
 │   ┌─────────────────┐                                       │
 │   │ "FEEDBACK LOOP  │                                       │
-│   │  TRIGGERED"     │ ──► Prompts /project:review           │
+│   │  TRIGGERED"     │ ──► Prompts /review           │
 │   └─────────────────┘                                       │
 │        │                                                     │
 │        ▼                                                     │
@@ -415,7 +415,7 @@ Class 2 builds on Class 1 to create complete development workflows.
 #### Init Command
 
 ```
-> /project:init
+> /init
 ```
 
 Creates:
@@ -460,7 +460,7 @@ project/
 
 - [ ] `commands/init.md` exists
 - [ ] `templates/settings.json` exists
-- [ ] `/project:init` creates full structure
+- [ ] `/init` creates full structure
 - [ ] Framework works in fresh project
 
 ---
@@ -482,12 +482,12 @@ project/
 #### The Cycle Command
 
 ```
-> /project:cycle Add user authentication
+> /cycle Add user authentication
 ```
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    /project:cycle                            │
+│                    /cycle                            │
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
 │   ┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐  │
@@ -504,7 +504,7 @@ project/
 #### The Feature Command
 
 ```
-> /project:feature Add notification system
+> /feature Add notification system
 ```
 
 ```
@@ -532,7 +532,7 @@ Gather Requirements
 #### The Bugfix Command
 
 ```
-> /project:bugfix Login fails after password change
+> /bugfix Login fails after password change
 ```
 
 ```
@@ -607,7 +607,7 @@ Class 3 enables multi-agent coordination for complex tasks.
 #### Orchestrator Flow
 
 ```
-> /project:orchestrate Implement complete authentication system
+> /orchestrate Implement complete authentication system
 ```
 
 ```
@@ -697,7 +697,7 @@ SEQUENTIAL (dependent tasks):
 #### Direct Delegation
 
 ```
-> /project:delegate security-auditor Audit the payment module
+> /delegate security-auditor Audit the payment module
 ```
 
 Bypasses orchestrator for focused, single-agent tasks.

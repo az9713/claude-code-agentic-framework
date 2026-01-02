@@ -108,15 +108,15 @@ ls -la commands/ agents/ skills/ hooks/
 
 ### For Claude Code Users
 
-Use the `/project:*` commands:
+Use the slash commands:
 
 ```
-/project:prime              # Always run first - loads context
-/project:plan [feature]     # Create implementation plan
-/project:build              # Build from the plan
-/project:review             # Get quality analysis
-/project:fix                # Fix review findings
-/project:cycle [feature]    # Complete workflow in one command
+/prime              # Always run first - loads context
+/plan [feature]     # Create implementation plan
+/build              # Build from the plan
+/review             # Get quality analysis
+/fix                # Fix review findings
+/cycle [feature]    # Complete workflow in one command
 ```
 
 ### For Other AI Agents

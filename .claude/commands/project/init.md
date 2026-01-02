@@ -86,11 +86,11 @@ Generate a CLAUDE.md tailored to the project:
 [Default standards or detected from project]
 
 ## Quick Start
-1. /project:prime - Load context
-2. /project:plan - Create implementation plan
-3. /project:build - Implement features
-4. /project:review - Review code quality
-5. /project:fix - Address issues
+1. /prime - Load context
+2. /plan - Create implementation plan
+3. /build - Implement features
+4. /review - Review code quality
+5. /fix - Address issues
 ```
 
 ### Step 5: Create Default Configuration
@@ -156,13 +156,13 @@ Show initialization summary:
 
 ## Next Steps
 1. Review CLAUDE.md and customize for your project
-2. Run /project:prime to load context
-3. Start developing with /project:plan
+2. Run /prime to load context
+3. Start developing with /plan
 
 ## Available Commands
 [List all commands]
 
-Type /project:prime to begin!
+Type /prime to begin!
 ```
 
 ## Class-Specific Initialization
@@ -190,10 +190,10 @@ When upgrading from lower class:
 
 ```bash
 # From Class 1 to Class 2
-/project:init --upgrade --class 2
+/init --upgrade --class 2
 
 # From Class 2 to Class 3
-/project:init --upgrade --class 3
+/init --upgrade --class 3
 ```
 
 Upgrade adds:

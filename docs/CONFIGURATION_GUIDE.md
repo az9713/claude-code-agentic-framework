@@ -974,10 +974,10 @@ Ensure these files exist:
 
 ### Validation Command
 
-Run `/project:prime` to validate configuration:
+Run `/prime` to validate configuration:
 
 ```
-> /project:prime
+> /prime
 
 ✓ CLAUDE.md found
 ✓ Plugin manifest valid

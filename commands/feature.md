@@ -18,9 +18,9 @@ Implement a complete feature from start to finish, including research, planning,
 ## Syntax
 
 ```
-/project:feature [feature description]
-/project:feature --with-docs [feature]     # Include documentation
-/project:feature --with-security [feature] # Include security audit
+/feature [feature description]
+/feature --with-docs [feature]     # Include documentation
+/feature --with-security [feature] # Include security audit
 ```
 
 ## Instructions
@@ -29,7 +29,7 @@ When this command is invoked:
 
 ### Step 0: Initialize
 
-1. Run `/project:prime` if needed
+1. Run `/prime` if needed
 2. Confirm feature scope with user
 3. Create feature tracking in specs/
 
@@ -224,7 +224,7 @@ Please verify:
 ## Example Execution
 
 ```
-User: /project:feature --with-docs Add password reset functionality
+User: /feature --with-docs Add password reset functionality
 
 > Starting Feature: Password Reset
 
@@ -296,4 +296,4 @@ git commit -m "feat: add password reset functionality"
 - Each step is explicit and can be reviewed
 - Optional steps (security, docs) add thoroughness
 - Consider for medium-to-large features
-- For simple changes, use `/project:cycle` instead
+- For simple changes, use `/cycle` instead

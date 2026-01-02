@@ -205,7 +205,7 @@ The memory file is the **single source of truth** that Claude reads at session s
 Class 3, Grade 1+ - Full Codebase Singularity
 
 ## Available Commands
-- /project:prime, /project:plan, /project:build, etc.
+- /prime, /plan, /build, etc.
 
 ## Agents
 - orchestrator, planner, builder, reviewer, fixer, etc.
@@ -568,32 +568,32 @@ description: What this command does
 
 | Command | File | Purpose |
 |---------|------|---------|
-| `/project:prime` | `commands/prime.md` | Activate context |
-| `/project:plan` | `commands/plan.md` | Create implementation plan |
-| `/project:build` | `commands/build.md` | Implement from plan |
-| `/project:review` | `commands/review.md` | Quality analysis |
-| `/project:fix` | `commands/fix.md` | Address issues |
+| `/prime` | `commands/prime.md` | Activate context |
+| `/plan` | `commands/plan.md` | Create implementation plan |
+| `/build` | `commands/build.md` | Implement from plan |
+| `/review` | `commands/review.md` | Quality analysis |
+| `/fix` | `commands/fix.md` | Address issues |
 
 #### E2E Workflow Commands
 
 | Command | File | Purpose |
 |---------|------|---------|
-| `/project:cycle` | `commands/cycle.md` | Complete P-B-R-F cycle |
-| `/project:feature` | `commands/feature.md` | Full feature development |
-| `/project:bugfix` | `commands/bugfix.md` | Bug investigation and fix |
+| `/cycle` | `commands/cycle.md` | Complete P-B-R-F cycle |
+| `/feature` | `commands/feature.md` | Full feature development |
+| `/bugfix` | `commands/bugfix.md` | Bug investigation and fix |
 
 #### Orchestration Commands
 
 | Command | File | Purpose |
 |---------|------|---------|
-| `/project:orchestrate` | `commands/orchestrate.md` | Multi-agent coordination |
-| `/project:delegate` | `commands/delegate.md` | Direct agent invocation |
+| `/orchestrate` | `commands/orchestrate.md` | Multi-agent coordination |
+| `/delegate` | `commands/delegate.md` | Direct agent invocation |
 
 #### Utility Commands
 
 | Command | File | Purpose |
 |---------|------|---------|
-| `/project:init` | `commands/init.md` | Initialize framework |
+| `/init` | `commands/init.md` | Initialize framework |
 
 ### 4.3 Command Implementation Examples
 
@@ -657,7 +657,7 @@ Execute the full Plan → Build → Review → Fix cycle.
 ### 4.4 Command Invocation Flow
 
 ```
-User Input: /project:cycle Add user authentication
+User Input: /cycle Add user authentication
                            │
                            ▼
               ┌────────────────────────┐
@@ -953,7 +953,7 @@ if [ -n "$LATEST_REVIEW" ]; then
     SCORE=$(grep -oP 'Score:\s*\K\d+' "$LATEST_REVIEW" | head -1)
     if [ -n "$SCORE" ] && [ "$SCORE" -lt 7 ]; then
         echo "WARNING: Latest review score ($SCORE/10) below threshold"
-        echo "Consider running /project:fix before ending session"
+        echo "Consider running /fix before ending session"
     fi
 fi
 
@@ -1391,7 +1391,7 @@ model: opus|sonnet|haiku
 
 3. **Update delegate command** if needed
 
-4. **Test agent** with `/project:delegate [agent] [task]`
+4. **Test agent** with `/delegate [agent] [task]`
 
 ### 11.2 Adding New Commands
 
@@ -1421,7 +1421,7 @@ description: What this command does
 
 2. **Update CLAUDE.md** with command reference
 
-3. **Test command** with `/project:command-name`
+3. **Test command** with `/command-name`
 
 ### 11.3 Adding New Skills
 
@@ -1515,7 +1515,7 @@ chmod +x scripts/hook-script.sh
 ### 12.2 Testing Commands
 
 ```markdown
-# Command Test: /project:[command]
+# Command Test: /[command]
 
 ## Test Case 1: [Description]
 
@@ -1523,7 +1523,7 @@ chmod +x scripts/hook-script.sh
 - [What must be true before testing]
 
 ### Input
-/project:[command] [arguments]
+/[command] [arguments]
 
 ### Expected Behavior
 [What should happen]
@@ -1550,7 +1550,7 @@ chmod +x scripts/hook-script.sh
 | Agent not found | Wrong name in delegate | Check agent filename |
 | Command not working | Syntax error in YAML | Validate frontmatter |
 | Hook not executing | Script not executable | `chmod +x script.sh` |
-| Quality gate fails | Score below threshold | Run `/project:fix` |
+| Quality gate fails | Score below threshold | Run `/fix` |
 | Orchestration hangs | Circular dependency | Review task graph |
 
 ### 12.5 Logging and Monitoring
@@ -1731,7 +1731,7 @@ command
 | **Agentic Layer** | Collection of prompts, commands, skills, and tools |
 | **Class** | Level of framework sophistication (1-3) |
 | **Codebase Singularity** | Point where AI agents operate code autonomously |
-| **Command** | Predefined workflow trigger (`/project:name`) |
+| **Command** | Predefined workflow trigger (`/name`) |
 | **Feedback Loop** | Self-reviewing, self-correcting automation |
 | **Grade** | Sub-level within a class (1-4, 1+) |
 | **Hook** | Lifecycle event handler |

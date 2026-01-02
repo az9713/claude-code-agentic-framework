@@ -153,7 +153,7 @@ model: opus
 ### Example Invocation
 
 ```
-/project:delegate orchestrator Implement complete user authentication
+/delegate orchestrator Implement complete user authentication
 ```
 
 ### Output Format
@@ -253,7 +253,7 @@ model: opus
 ### Example Invocation
 
 ```
-/project:delegate planner Design the API structure for user management
+/delegate planner Design the API structure for user management
 ```
 
 ### Output Format
@@ -369,7 +369,7 @@ model: sonnet
 ### Example Invocation
 
 ```
-/project:delegate builder Create a validation utility for user input
+/delegate builder Create a validation utility for user input
 ```
 
 ### Output
@@ -461,7 +461,7 @@ model: opus
 ### Example Invocation
 
 ```
-/project:delegate reviewer Review the authentication module
+/delegate reviewer Review the authentication module
 ```
 
 ### Output Format
@@ -577,7 +577,7 @@ model: sonnet
 ### Example Invocation
 
 ```
-/project:delegate fixer Address the issues from the last review
+/delegate fixer Address the issues from the last review
 ```
 
 ### Output
@@ -668,7 +668,7 @@ model: sonnet
 ### Example Invocation
 
 ```
-/project:delegate test-writer Write tests for the validation module
+/delegate test-writer Write tests for the validation module
 ```
 
 ### Output Format
@@ -768,7 +768,7 @@ model: haiku
 ### Example Invocation
 
 ```
-/project:delegate doc-fetcher Research JWT authentication best practices
+/delegate doc-fetcher Research JWT authentication best practices
 ```
 
 ### Output Location
@@ -881,7 +881,7 @@ model: opus
 ### Example Invocation
 
 ```
-/project:delegate security-auditor Audit the authentication system
+/delegate security-auditor Audit the authentication system
 ```
 
 ### Output Format
@@ -1011,7 +1011,7 @@ model: sonnet
 ### Example Invocation
 
 ```
-/project:delegate refactorer Clean up the utility functions
+/delegate refactorer Clean up the utility functions
 ```
 
 ### Output
@@ -1131,7 +1131,7 @@ What you produce:
 2. **Define frontmatter**: name, description, tools, model
 3. **Write prompt**: role, responsibilities, process
 4. **Update CLAUDE.md**: Add reference to new agent
-5. **Test agent**: Use `/project:delegate agent-name [task]`
+5. **Test agent**: Use `/delegate agent-name [task]`
 
 ### Best Practices
 

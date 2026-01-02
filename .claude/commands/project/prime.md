@@ -47,12 +47,12 @@ Singularity concept with orchestration capabilities. The framework enables
 autonomous plan-build-review-fix workflows.
 
 Available Commands:
-- /project:plan - Create implementation plans
-- /project:build - Build from specifications
-- /project:review - Review code quality
-- /project:fix - Address review issues
-- /project:cycle - Complete development cycle
-- /project:orchestrate - Multi-agent coordination
+- /plan - Create implementation plans
+- /build - Build from specifications
+- /review - Review code quality
+- /fix - Address review issues
+- /cycle - Complete development cycle
+- /orchestrate - Multi-agent coordination
 
 Available Agents: planner, builder, reviewer, fixer, test-writer,
                   doc-fetcher, security-auditor, refactorer, orchestrator

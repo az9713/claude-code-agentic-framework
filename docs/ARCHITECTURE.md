@@ -380,7 +380,7 @@ All agents have access to Glob and Grep
 
 ```
                          User Input
-                    /project:command args
+                    /command args
                              │
                              ▼
                   ┌─────────────────────┐
@@ -436,7 +436,7 @@ All agents have access to Glob and Grep
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                              │
 │  ┌──────────────────┐                                                       │
-│  │   /project:plan  │                                                       │
+│  │   /plan  │                                                       │
 │  │                  │                                                       │
 │  │  Input:          │                                                       │
 │  │  • Feature desc  │                                                       │
@@ -453,7 +453,7 @@ All agents have access to Glob and Grep
 │                             └──────────┬───────────┘                        │
 │                                        │                                    │
 │  ┌──────────────────┐                  │                                    │
-│  │  /project:build  │◄─────────────────┘                                    │
+│  │  /build  │◄─────────────────┘                                    │
 │  │                  │                                                       │
 │  │  Input:          │                                                       │
 │  │  • Plan file     │                                                       │
@@ -470,7 +470,7 @@ All agents have access to Glob and Grep
 │                             └──────────┬───────────┘                        │
 │                                        │                                    │
 │  ┌──────────────────┐                  │                                    │
-│  │ /project:review  │◄─────────────────┘                                    │
+│  │ /review  │◄─────────────────┘                                    │
 │  │                  │                                                       │
 │  │  Input:          │                                                       │
 │  │  • Code changes  │                                                       │
@@ -498,7 +498,7 @@ All agents have access to Glob and Grep
 │                             └─────────┘ └────┬────┘                         │
 │                                              │                              │
 │  ┌──────────────────┐                        │                              │
-│  │   /project:fix   │◄───────────────────────┘                              │
+│  │   /fix   │◄───────────────────────┘                              │
 │  │                  │                                                       │
 │  │  Input:          │                                                       │
 │  │  • Review report │                                                       │
@@ -650,7 +650,7 @@ Group D:                       ▼
 │  ┌─────────────────────────────────────────────────────────────────────┐    │
 │  │                        GATE 1: PLAN APPROVAL                         │    │
 │  │                                                                      │    │
-│  │  Trigger: After /project:plan completes                             │    │
+│  │  Trigger: After /plan completes                             │    │
 │  │  Criteria: Human review and explicit approval                       │    │
 │  │  Pass: User approves plan                                           │    │
 │  │  Fail: User requests changes → back to planning                     │    │
@@ -661,7 +661,7 @@ Group D:                       ▼
 │  ┌─────────────────────────────────────────────────────────────────────┐    │
 │  │                        GATE 2: TEST PASSAGE                          │    │
 │  │                                                                      │    │
-│  │  Trigger: After /project:build completes                            │    │
+│  │  Trigger: After /build completes                            │    │
 │  │  Criteria: All tests must pass                                      │    │
 │  │  Pass: All tests green                                              │    │
 │  │  Fail: Test failures → fix tests first                              │    │
@@ -672,10 +672,10 @@ Group D:                       ▼
 │  ┌─────────────────────────────────────────────────────────────────────┐    │
 │  │                        GATE 3: REVIEW SCORE                          │    │
 │  │                                                                      │    │
-│  │  Trigger: After /project:review completes                           │    │
+│  │  Trigger: After /review completes                           │    │
 │  │  Criteria: Score ≥ 7/10, no critical findings                       │    │
 │  │  Pass: Score meets threshold                                        │    │
-│  │  Fail: Score below threshold → trigger /project:fix                 │    │
+│  │  Fail: Score below threshold → trigger /fix                 │    │
 │  │                                                                      │    │
 │  │  Scoring:                                                           │    │
 │  │  ┌────────────────┬────────┬─────────────────────────────────────┐ │    │

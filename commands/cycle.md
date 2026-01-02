@@ -18,9 +18,9 @@ Execute the complete Plan-Build-Review-Fix cycle, the core workflow of the Codeb
 ## Syntax
 
 ```
-/project:cycle [feature description]
-/project:cycle --quick [feature]    # Skip deep review
-/project:cycle --thorough [feature] # Deep review + security
+/cycle [feature description]
+/cycle --quick [feature]    # Skip deep review
+/cycle --thorough [feature] # Deep review + security
 ```
 
 ## Instructions
@@ -29,7 +29,7 @@ When this command is invoked:
 
 ### Pre-Flight Check
 
-1. Run `/project:prime` if not already primed
+1. Run `/prime` if not already primed
 2. Verify CLAUDE.md is loaded
 3. Check for any pending work in specs/
 4. Confirm feature description with user
@@ -195,7 +195,7 @@ After all phases complete:
 ## Example Execution
 
 ```
-User: /project:cycle Add user authentication with JWT
+User: /cycle Add user authentication with JWT
 
 > Starting Cycle: User Authentication
 

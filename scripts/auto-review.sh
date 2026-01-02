@@ -70,16 +70,16 @@ echo "  Agent '$AGENT_NAME' completed successfully."
 echo "  Per Class 1, Grade 4 feedback loop:"
 echo ""
 echo "  → Automatic review recommended"
-echo "  → Run: /project:review"
+echo "  → Run: /review"
 echo ""
 echo "  To complete the cycle, also run:"
-echo "  → /project:fix (if issues found)"
+echo "  → /fix (if issues found)"
 echo ""
 echo "=============================================="
 echo ""
 
 # For headless/automated mode, we could invoke claude directly:
-# claude --print "/project:review" 2>/dev/null || true
+# claude --print "/review" 2>/dev/null || true
 
 # Clean up review flag if this was triggered by reviewer/fixer completing
 # (indicates cycle is complete)
