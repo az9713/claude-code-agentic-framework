@@ -32,7 +32,7 @@ Think of it this way:
 │                                                             │
 │  ┌─────────────────────────────────────────────────────┐   │
 │  │  Memory    │ Commands │ Agents  │ Skills  │ Hooks   │   │
-│  │  CLAUDE.md │ 11 cmds  │ 9 agents│ 4 skills│ 4 hooks │   │
+│  │  CLAUDE.md │ 11 cmds  │ 9 agents│ 4 skills│ 5 hooks │   │
 │  └─────────────────────────────────────────────────────┘   │
 │                           │                                 │
 │                    Operates On                              │
@@ -235,6 +235,7 @@ Event-driven automation that creates feedback loops:
 | **auto-lint** | PostToolUse (Edit/Write) | Format code after editing |
 | **protect-files** | PreToolUse (Edit/Write) | Block sensitive file edits |
 | **log-subagent** | SubagentStop | Track agent activity |
+| **auto-review** | SubagentStop | Trigger review after builder/fixer |
 | **quality-gate** | Stop | Verify quality before completion |
 
 **How Hooks Enable Self-Correction**:
@@ -436,6 +437,7 @@ project/
 │   │   ├── auto-lint.sh
 │   │   ├── protect-files.sh
 │   │   ├── log-subagent.sh
+│   │   ├── auto-review.sh
 │   │   └── quality-gate.sh
 │   │
 │   ├── .mcp.json                 # MCP integration (Grade 3)
@@ -558,10 +560,12 @@ This implementation is complete at **Class 3, Grade 1+** - the highest level of 
 
 ## Related Documentation
 
+- [CLASSIFICATION.md](./CLASSIFICATION.md) - Complete Class/Grade reference
 - [ARCHITECTURE.md](./ARCHITECTURE.md) - Technical system design
 - [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md) - Implementation details
 - [AGENTS_REFERENCE.md](./AGENTS_REFERENCE.md) - Agent specifications
 - [COMMANDS_REFERENCE.md](./COMMANDS_REFERENCE.md) - Command reference
+- [HOOKS_GUIDE.md](./HOOKS_GUIDE.md) - Hooks and feedback loops
 
 ---
 
