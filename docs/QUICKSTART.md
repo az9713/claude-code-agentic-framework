@@ -98,151 +98,95 @@ Currently at Class 3, Grade 1+ - the highest level of the agentic framework.
 
 ## Part 3: 10 Beginner Use Cases
 
-Complete these in order for the best learning experience.
+Complete these in order for the best learning experience. Each use case demonstrates a core framework capability.
 
 ---
 
-### Use Case 1: Explore Your Project
+### Use Case 1: Prime Your Session
 
-**Goal**: Understand your codebase quickly.
-**Time**: 3 minutes
-
-```
-> Give me an overview of this project's structure.
-> List all folders and explain what each one is for.
-```
-
-Then dive deeper:
+**Goal**: Load project context and activate the agentic layer.
+**Time**: 2 minutes
 
 ```
-> Tell me about the agents/ folder. What agents are available?
+> /project:prime
 ```
 
-And ask about specifics:
+Claude will:
+1. Read CLAUDE.md (project memory)
+2. Load available commands and agents
+3. Understand project structure and standards
+4. Be ready to work with full context
 
-```
-> What is the orchestrator agent and what does it do?
-```
-
-**What You Learned**: Claude can map out any codebase in minutes.
+**What You Learned**: Always start with `/project:prime` - it's the foundation of the agentic layer.
 
 ---
 
-### Use Case 2: Explain Code Like I'm New
+### Use Case 2: Plan Before You Build
 
-**Goal**: Understand unfamiliar code.
+**Goal**: Experience the planning phase with the planner agent.
 **Time**: 5 minutes
 
 ```
-> Explain the code in commands/cycle.md like I'm a complete beginner.
-> What does this command do step by step?
+> /project:plan Add input validation to user forms
 ```
 
-Ask follow-ups:
+The **planner agent** (using opus model) will:
+- Analyze requirements
+- Break down into tasks
+- Identify files to modify
+- Assess risks and dependencies
+- Save plan to `specs/`
 
-```
-> What does "quality gate" mean in that context?
-> Why do we loop until the score is 7 or higher?
-```
-
-**What You Learned**: Claude can explain any code at any level.
+**What You Learned**: The framework enforces "plan first" - no cowboy coding.
 
 ---
 
-### Use Case 3: Create Your First Function
+### Use Case 3: Build from a Plan
 
-**Goal**: Have Claude write code for you.
-**Time**: 5 minutes
-
-```
-> Create a file called app/utils/validators.js with these functions:
-> 1. isValidEmail - checks if a string is a valid email
-> 2. isValidPhone - checks if a string is a valid US phone number
-> 3. isValidPassword - password with 8+ chars, uppercase, number
-```
-
-Review the proposal, then approve or request changes.
-
-**What You Learned**: Specific instructions = better results.
-
----
-
-### Use Case 4: Fix a Simple Bug
-
-**Goal**: Experience debugging workflow.
-**Time**: 5 minutes
-
-```
-> Create app/buggy.js with a function that calculates factorial,
-> but make it have a bug where factorial(1) returns 0.
-```
-
-Then:
-
-```
-> There's a bug in app/buggy.js. When I call factorial(1),
-> I get 0 instead of 1. Find and fix the bug.
-```
-
-**What You Learned**: Describe symptoms, Claude finds root cause.
-
----
-
-### Use Case 5: Add Input Validation
-
-**Goal**: Make code more robust.
-**Time**: 5 minutes
-
-```
-> Read app/buggy.js. Update it to handle:
-> - null or undefined input
-> - Wrong type (string instead of number)
-> - Negative numbers
-> Each case should return a clear error message.
-```
-
-**What You Learned**: Good code handles bad input gracefully.
-
----
-
-### Use Case 6: Write Unit Tests
-
-**Goal**: Ensure code works correctly.
+**Goal**: Implement code using the builder agent.
 **Time**: 7 minutes
 
+After creating a plan:
+
 ```
-> Create tests/validators.test.js that tests all functions
-> in app/utils/validators.js. Include tests for:
-> - Valid inputs (should pass)
-> - Invalid inputs (should fail)
-> - Edge cases (empty strings, null)
+> /project:build
 ```
 
-**What You Learned**: Tests document expected behavior.
+The **builder agent** (using sonnet model) will:
+1. Read the plan from `specs/`
+2. Implement each task incrementally
+3. Follow project coding standards
+4. Create tests alongside code
+
+**What You Learned**: Building from plans ensures nothing is missed.
 
 ---
 
-### Use Case 7: Use the Review Command
+### Use Case 4: Review Your Code
 
-**Goal**: Get quality analysis.
+**Goal**: Get quality analysis from the reviewer agent.
 **Time**: 5 minutes
 
 ```
 > /project:review
 ```
 
-Claude will analyze your code and produce a report with:
-- Score (1-10)
+The **reviewer agent** (using opus model) will produce:
+- Quality score (1-10)
 - Critical/Major/Minor findings
+- Security concerns
+- Test coverage gaps
 - Specific recommendations
 
-**What You Learned**: Reviews catch issues before they become problems.
+Review is saved to `specs/reviews/`.
+
+**What You Learned**: The reviewer catches issues before they reach production.
 
 ---
 
-### Use Case 8: Use the Fix Command
+### Use Case 5: Fix Review Findings
 
-**Goal**: Address review findings automatically.
+**Goal**: Address issues using the fixer agent.
 **Time**: 5 minutes
 
 After running `/project:review`:
@@ -251,56 +195,123 @@ After running `/project:review`:
 > /project:fix
 ```
 
-Claude will:
-1. Read the review findings
-2. Prioritize by severity
-3. Fix each issue
-4. Verify the fixes
+The **fixer agent** (using sonnet model) will:
+1. Read findings from the review
+2. Prioritize by severity (critical first)
+3. Fix each issue systematically
+4. Document changes made
 
-**What You Learned**: The fix command automates issue resolution.
+**What You Learned**: Fix addresses review findings automatically.
 
 ---
 
-### Use Case 9: Plan a Feature
+### Use Case 6: Delegate to a Specific Agent
 
-**Goal**: Create a structured plan before building.
+**Goal**: Learn direct agent invocation.
 **Time**: 5 minutes
 
 ```
-> /project:plan Add a simple TODO list manager with:
-> - Add/delete todos
-> - Mark complete
-> - Save to JSON file
+> /project:delegate test-writer Write tests for app/utils/validators.js
 ```
 
-Review the plan Claude creates. It should include:
-- Task breakdown
-- Files to create
-- Dependencies
-- Risk assessment
+Available agents for delegation:
+- `planner` - Architecture and design
+- `builder` - Code implementation
+- `reviewer` - Quality analysis
+- `fixer` - Issue resolution
+- `test-writer` - Test creation
+- `doc-fetcher` - Documentation research
+- `security-auditor` - Security review
+- `refactorer` - Code improvement
 
-**What You Learned**: Plan first, build second.
+**What You Learned**: Delegate gives you direct access to specialized agents.
 
 ---
 
-### Use Case 10: Build from Plan
+### Use Case 7: The Review-Fix Loop
 
-**Goal**: Implement a planned feature.
+**Goal**: Experience iterative quality improvement.
 **Time**: 10 minutes
 
-After creating a plan:
+Run review, then fix, then review again:
 
 ```
-> /project:build
+> /project:review
 ```
 
-Claude will:
-1. Read the plan
-2. Create files incrementally
-3. Run tests
-4. Document changes
+Note the score (e.g., 5/10). Then:
 
-**What You Learned**: Building from a plan ensures completeness.
+```
+> /project:fix
+```
+
+Then review again:
+
+```
+> /project:review
+```
+
+The score should improve. This loop continues until quality gate passes (score >= 7).
+
+**What You Learned**: The framework enforces quality through iteration.
+
+---
+
+### Use Case 8: Security Audit
+
+**Goal**: Use the security-auditor agent.
+**Time**: 5 minutes
+
+```
+> /project:delegate security-auditor Audit authentication handling
+```
+
+The **security-auditor agent** (using opus model) checks for:
+- Injection vulnerabilities
+- Authentication weaknesses
+- Data exposure risks
+- OWASP Top 10 issues
+
+**What You Learned**: Security is a first-class concern with a dedicated agent.
+
+---
+
+### Use Case 9: Fetch Documentation
+
+**Goal**: Use the doc-fetcher agent.
+**Time**: 5 minutes
+
+```
+> /project:delegate doc-fetcher Research JWT best practices and save to ai_docs/
+```
+
+The **doc-fetcher agent** (using haiku model) will:
+1. Search for relevant documentation
+2. Extract key information
+3. Save to `ai_docs/` for future reference
+4. Summarize findings
+
+**What You Learned**: Doc-fetcher builds a knowledge base for your project.
+
+---
+
+### Use Case 10: Complete Plan-Build-Review-Fix Cycle
+
+**Goal**: Experience the full workflow in one command.
+**Time**: 15 minutes
+
+```
+> /project:cycle Add error logging utility
+```
+
+This single command runs the complete cycle:
+1. **Plan** - Planner agent designs the implementation
+2. **Build** - Builder agent implements the code
+3. **Review** - Reviewer agent analyzes quality
+4. **Fix** - Fixer agent addresses issues
+5. **Loop** - Repeat until score >= 7/10
+
+**What You Learned**: The cycle command automates the entire development workflow.
 
 ---
 
