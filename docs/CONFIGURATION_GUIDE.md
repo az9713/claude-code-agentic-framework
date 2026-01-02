@@ -984,7 +984,7 @@ Run `/prime` to validate configuration:
 ✓ 9 agents loaded
 ✓ 11 commands loaded
 ✓ 4 skills loaded
-✓ 4 hooks configured
+✓ 5 hooks configured
 ✓ 3 MCP servers configured
 ```
 

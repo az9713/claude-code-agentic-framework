@@ -889,7 +889,7 @@ The delegate command invokes a specific agent for a focused task:
 
 #### Description
 
-The init command sets up the framework structure in any project:
+The setup command sets up the framework structure in any project:
 
 1. Create CLAUDE.md (memory file)
 2. Create commands/ directory
@@ -941,7 +941,7 @@ Codebase Singularity Initialized
 
 Created:
 ✓ CLAUDE.md
-✓ commands/ (5 commands)
+✓ commands/ (core workflow ready)
 ✓ specs/plans/
 ✓ specs/reviews/
 ✓ ai_docs/

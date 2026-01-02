@@ -408,11 +408,11 @@ Class 2 builds on Class 1 to create complete development workflows.
 
 | Component | Purpose | Our Implementation |
 |-----------|---------|-------------------|
-| Init Command | Initialize framework in new projects | `commands/setup.md` |
+| Setup Command | Initialize framework in new projects | `commands/setup.md` |
 | Templates | Default configurations | `templates/settings.json` |
 | Self-Contained | No external dependencies | All files in project |
 
-#### Init Command
+#### Setup Command
 
 ```
 > /setup
@@ -747,7 +747,7 @@ Bypasses orchestrator for focused, single-agent tasks.
 
 | Grade | Component | File | Status |
 |-------|-----------|------|--------|
-| **1** | Init command | `commands/setup.md` | ✓ |
+| **1** | setup command | `commands/setup.md` | ✓ |
 | **1** | Settings template | `templates/settings.json` | ✓ |
 | **2** | Cycle command | `commands/cycle.md` | ✓ |
 | **2** | Feature command | `commands/feature.md` | ✓ |
@@ -815,7 +815,7 @@ COMPLETE: Codebase Singularity achieved!
 | Can you delegate to specialized agents? | ≥ Grade 2 | Add agents/ |
 | Do you have skills and MCP? | ≥ Grade 3 | Add skills/, .mcp.json |
 | Do agents review each other? | ≥ Grade 4 | Add auto-review hook |
-| Can you init in new projects? | ≥ Class 2 | Add init command |
+| Can you init in new projects? | ≥ Class 2 | Add setup command |
 | Do you have E2E workflows? | ≥ Class 2, Grade 2 | Add cycle/feature/bugfix |
 | Can one agent coordinate others? | Class 3 | Add orchestrator |
 
@@ -829,7 +829,7 @@ COMPLETE: Codebase Singularity achieved!
 | 1 | 2 | Agents | 9 specialized agents |
 | 1 | 3 | Tools | 4 skills, 3 MCP servers |
 | 1 | 4 | Feedback | 5 hooks including auto-review |
-| 2 | 1 | Portable | init command, templates |
+| 2 | 1 | Portable | setup command, templates |
 | 2 | 2 | Workflows | cycle, feature, bugfix |
 | 3 | 1+ | Orchestration | orchestrator, delegate |
 

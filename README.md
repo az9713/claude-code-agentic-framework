@@ -24,11 +24,28 @@ This implementation is **Class 3, Grade 1+** - the highest level of the agentic 
 
 ## Quick Start
 
-1. **Load the plugin** (automatically detected by Claude Code)
+### In This Project
 
+1. **Open Claude Code** in this directory
 2. **Activate with context**:
    ```
    /prime
+   ```
+3. **Start developing**:
+
+### In Other Projects
+
+1. **Install globally** (one-time):
+   ```bash
+   # Copy commands and agents to ~/.claude/
+   cp -r .claude/commands/project ~/.claude/commands/singularity
+   cp -r agents/*.md ~/.claude/agents/
+   cp -r skills/* ~/.claude/skills/
+   ```
+
+2. **Initialize in new project**:
+   ```
+   /setup
    ```
 
 3. **Start developing**:
@@ -137,13 +154,33 @@ The Plan-Build-Review-Fix cycle is the foundation:
 
 ## Using in New Projects
 
-Initialize the framework in any project:
+### Prerequisites
 
+Install commands globally (one-time setup):
+
+```bash
+# From this project directory:
+cp -r .claude/commands/project ~/.claude/commands/singularity
+cp -r agents/*.md ~/.claude/agents/
+cp -r skills/* ~/.claude/skills/
 ```
+
+### Initialize New Project
+
+```bash
+cd /path/to/your/project
+claude
+
+# Run setup command
 /setup
 ```
 
-This creates the directory structure, CLAUDE.md, and configuration files.
+This creates:
+- `CLAUDE.md` - Project memory
+- `AGENTS.md` - Agent instructions
+- `commands/` - Workflow commands
+- `hooks/` - Automation hooks
+- `specs/` - Plans and reviews
 
 ## Configuration
 

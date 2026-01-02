@@ -1,8 +1,8 @@
 ---
-name: init
+name: setup
 description: Initialize the Codebase Singularity framework in a new project. Sets up directory structure, CLAUDE.md, and default configuration.
 ---
-# Init Command - Project Initialization
+# Setup Command - Project Initialization
 
 ## Purpose
 
@@ -174,7 +174,7 @@ Type /prime to begin!
 
 ### Class 2: Portable Layer
 - All Class 1 features
-- Init command for portability
+- setup command for portability
 - Settings template
 - E2E workflow commands
 
